@@ -1,0 +1,6 @@
+{
+    "host": "localhost",
+    "dbname": "trivia_game",
+    "username": "your_user",
+    "password": "your_password"
+}
