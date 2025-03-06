@@ -1,0 +1,17 @@
+TriviaGameProject/
+│── config/
+│   ├── db_connection.json
+│── public/
+│   ├── start_game.php
+│── scripts/
+│   ├── game_logic.php
+│── admin/
+│   ├── add_question.php
+│── bot/
+│   ├── send_message.php
+│── database/
+│   ├── schema.sql
+│── data/
+│   ├── general_questions.json
+│── README.md
+│── .gitignore
