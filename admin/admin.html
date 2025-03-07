@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <title>ניהול שאלות</title>
+</head>
+<body>
+    <h2>הוספת שאלה חדשה</h2>
+    <form id="questionForm">
+        <label>שאלה:</label><br>
+        <input type="text" id="question_text"><br><br>
+
+        <label>קטגוריה:</label><br>
+        <select id="category">
+            <option value="general">כללי</option>
+            <option value="team">צוות</option>
+            <option value="department">מחלקתי</option>
+            <option value="group">קבוצתי</option>
+        </select><br><br>
+
+        <label>שפה:</label><br>
+        <select id="language">
+            <option value="he">עברית</option>
+            <option value="en">אנגלית</option>
+            <option value="fr">צרפתית</option>
+        </select><br><br>
+
+        <button type="submit">הוסף שאלה</button>
+    </form>
+
+    <script>
+        document.getElementById("questionForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            let question_text = document.getElementById("question_text").value;
+            let category = document.getElementById("category").value;
+            let language = document.getElementById("language").value;
+
+            fetch("add_question.php", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ question_text, category, language })
+            })
+            .then(response => response.json())
+            .then(data => alert(data.message))
+            .catch(error => console.error("Error:", error));
+        });
+    </script>
+</body>
+</html>
