@@ -1,3 +1,31 @@
-[
-    { "id": "GQ101", "question": "How often does this group meet?" }
-]
+{
+    "questionDefinition": {
+        "surveyTitle": "שאלות לקבוצה 101",
+        "questions": [
+            {
+                "id": 301,
+                "type": "SINGLE_CHOICE",
+                "question": "כל כמה זמן נפגשת הקבוצה?",
+                "question_theme": "קבוצות",
+                "options": [
+                    {
+                        "returnValue": "1",
+                        "displayValue": "1. פעם בשבוע",
+                        "userExpectedAnswers": ["1", "one", "אחד"]
+                    },
+                    {
+                        "returnValue": "2",
+                        "displayValue": "2. פעם בחודש",
+                        "userExpectedAnswers": ["2", "two", "שתיים"]
+                    },
+                    {
+                        "returnValue": "3",
+                        "displayValue": "3. פעם ברבעון",
+                        "userExpectedAnswers": ["3", "three", "שלוש"]
+                    }
+                ],
+                "BestAnswer": "פעם בשבוע"
+            }
+        ]
+    }
+}
