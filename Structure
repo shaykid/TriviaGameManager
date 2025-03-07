@@ -3,9 +3,14 @@ TriviaGameProject/
 │   ├── db_connection.json
 │── public/
 │   ├── start_game.php
+│   ├── update_score.php
+│   ├── get_chat_history.php
 │── scripts/
 │   ├── game_logic.php
+│   ├── score_manager.php
+│   ├── translate_question.php
 │── admin/
+│   ├── admin.html
 │   ├── add_question.php
 │── bot/
 │   ├── send_message.php
@@ -13,5 +18,10 @@ TriviaGameProject/
 │   ├── schema.sql
 │── data/
 │   ├── general_questions.json
+│   ├── team_questions.json
+│   ├── department_questions.json
+│   ├── group_questions_101.json
+│   ├── group_questions_102.json
+│── logs/
 │── README.md
 │── .gitignore
