@@ -1,5 +1,3488 @@
-[
-    { "id": "GQ1", "question": "What is the capital of France?" },
-    { "id": "GQ2", "question": "Who wrote 'Hamlet'?" },
-    { "id": "GQ3", "question": "What is 2 + 2?" }
-]
+{  
+    "questionDefinition": {
+      "questions": [
+        {
+          "id": 1,
+          "type": "SINGLE_CHOICE",
+          "question": "מי היה המלך ששלט בפרס ומדי בזמן מגילת אסתר?",
+          "question_theme": "מגילת אסתר",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. מלך אחר 😜",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. נבוכדנצר",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. כוש",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. אחשוורוש",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "אחשוורוש"
+        },
+        {
+          "id": 2,
+          "type": "SINGLE_CHOICE",
+          "question": "מהו היתרון המרכזי בגידול קנאביס רפואי בחממה?",
+          "question_theme": "גידול קנאביס רפואי בחממה",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. צמחים גדלים בקצב מהיר בגלל השמש הישירה",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. חיסכון בחשמל",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. נוף ירוק מעורר השראה 😎",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. שליטה מלאה על תנאי הסביבה",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "שליטה מלאה על תנאי הסביבה"
+        },
+        {
+          "id": 3,
+          "type": "SINGLE_CHOICE",
+          "question": "מהי ההגדרה הבסיסית של קנאביס רפואי?",
+          "question_theme": "שוק הקנאביס הרפואי הישראלי",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. פתרון לכל כאב – גם בלב חלומי",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. צמח עם חומרים פעילים לטיפול רפואי",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. ירק ירוק לטעם מיוחד",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. תרופה סודית מהטבע",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "צמח עם חומרים פעילים לטיפול רפואי"
+        },
+        {
+          "id": 4,
+          "type": "SINGLE_CHOICE",
+          "question": "מהו משמעותו של קריאת מגילת אסתר בפורים?",
+          "question_theme": "מנהגי חג הפורים ומשמעותם",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. כדי להראות מי הכי מהיר בקריאה",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. קריאה לטקס עם מוזיקה וקצב 🎶",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. להפתיע את הילדים עם סיפור ישן",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. לספר מחדש את נס ההצלה",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "לספר מחדש את נס ההצלה"
+        },
+        {
+          "id": 5,
+          "type": "SINGLE_CHOICE",
+          "question": "אם יש לך 10 תפוחים ואתה מחלק אותם שווה בשווה ל-5 חברים, כמה תפוחים יקבל כל אחד?",
+          "question_theme": "חידות הגיון פשוטות",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. 10",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. 2",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. 0",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. 5",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "2"
+        },
+        {
+          "id": 6,
+          "type": "SINGLE_CHOICE",
+          "question": "בחדר יש 3 מנורות, ומחוץ לחדר שלושה מתגים. ניתן להדליק ולכבות את המתגים, אך ניתן להיכנס לחדר רק פעם אחת. איך תזהה איזה מתג שולט באיזו מנורה?",
+          "question_theme": "חידות הגיון קשות",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. להדליק את כל המתגים ואז לבדוק איזו מנורה נדלקת",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. להדליק את כל המתגים ולראות איזו מנורה כבה אוטומטית",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. להדליק את כל המתגים ולבדוק באיזו מנורה נרעד האוויר",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. להדליק מתג אחד למשך 10 דקות, לכבות אותו, להדליק את השני, ולהיכנס לחדר ולבדוק איזו מנורה חמה ואיזו דולקת",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "להדליק מתג אחד למשך 10 דקות, לכבות אותו, להדליק את השני, ולהיכנס לחדר ולבדוק איזו מנורה חמה ואיזו דולקת"
+        },
+        {
+          "id": 7,
+          "type": "SINGLE_CHOICE",
+          "question": "מי הייתה אסתר במגילה?",
+          "question_theme": "מגילת אסתר",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. נערה יהודייה רגילה",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. יהודייה שהפכה למלכה",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. אישה זרה שהתגיירה",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. מלכה עם סוד גדול 👑",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "יהודייה שהפכה למלכה"
+        },
+        {
+          "id": 8,
+          "type": "SINGLE_CHOICE",
+          "question": "איזה מרכיב מהותי יש לשלוט בו בחממה?",
+          "question_theme": "גידול קנאביס רפואי בחממה",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. מספר החלונות",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. טמפרטורה ולחות",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. קריאות שירים למינים שונים 🎶",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. צבע הקירות",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "טמפרטורה ולחות"
+        },
+        {
+          "id": 9,
+          "type": "SINGLE_CHOICE",
+          "question": "מהו היתרון המרכזי של הקנאביס הרפואי בשוק הישראלי?",
+          "question_theme": "שוק הקנאביס הרפואי הישראלי",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. מוצר “ירוק” שמשדר חדשנות 🍀",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. מגמה עולמית עם נגיעות טכנולוגיות",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. טיפול ממוקד במחלות כרוניות",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. פתרון לכל כאב – גם בלב חלומי",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "טיפול ממוקד במחלות כרוניות"
+        },
+        {
+          "id": 10,
+          "type": "SINGLE_CHOICE",
+          "question": "מהו המקור של מנהג התחפושות בפורים?",
+          "question_theme": "מנהגי חג הפורים ומשמעותם",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. להקל על הזיהוי בים ההמון",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. כדי להסתיר את זהות המיעוט",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. כדי להיות יצירתי ולהפוך את היום לבלתי נשכח",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. כדי להפתיע את השכנים עם סטייל חדש 😎",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "כדי להסתיר את זהות המיעוט"
+        },
+        {
+          "id": 11,
+          "type": "SINGLE_CHOICE",
+          "question": "אם שני חצאים יוצרים שלם, כמה חצאים דרושים ל-5 שלמים?",
+          "question_theme": "חידות הגיון פשוטות",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. 8",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. 10",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. 5",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. 12",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "10"
+        },
+        {
+          "id": 12,
+          "type": "SINGLE_CHOICE",
+          "question": "יש לך 12 כדורים זהים, כאשר אחד מהם שוקל שונה מהשאר. באמצעות מאזניים איזונים בלבד, כיצד תזהה את הכדור החריג?",
+          "question_theme": "חידות הגיון קשות",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. להשוות כדור אחד מול כדור אחד בכל פעם",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. לשקל את כל הכדורים יחד מול קבוצת כדורים זהה",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. אין פתרון במסגרת 3 מדידות",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. לחלק את הכדורים ל-3 קבוצות שוות ולבדוק איזו קבוצה שוקלת אחרת",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "לחלק את הכדורים ל-3 קבוצות שוות ולבדוק איזו קבוצה שוקלת אחרת"
+        },
+        {
+          "id": 13,
+          "type": "SINGLE_CHOICE",
+          "question": "מי היה קרוב משפחה ומדריך חשוב של אסתר?",
+          "question_theme": "מגילת אסתר",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. מישהו שהתחפש למשפחה 😉",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. עמית מקרב האצילים",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. מרדכי",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. דוד",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "מרדכי"
+        },
+        {
+          "id": 14,
+          "type": "SINGLE_CHOICE",
+          "question": "איזו מערכת תאורה נחשבת חשובה בחממה?",
+          "question_theme": "גידול קנאביס רפואי בחממה",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. להאיר את החממה כשיש הפסקת חשמל 😉",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. לקיים תחרות תאורה עם הצמחים הסמוכים",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. להבטיח צמיחה אחידה והתפתחות פוטוסינתזה",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. ליצור אווירה רומנטית לצמחים",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "להבטיח צמיחה אחידה והתפתחות פוטוסינתזה"
+        },
+        {
+          "id": 15,
+          "type": "SINGLE_CHOICE",
+          "question": "איזה תהליך מהבאים מהווה חלק מהייצור הרפואי של הקנאביס?",
+          "question_theme": "שוק הקנאביס הרפואי הישראלי",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. ייבוש בלבד ללא עיבוד נוסף",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. חליטת תמציות והפקת שמנים",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. סתם קטיף",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. הקטיף והפצה ישירה",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "חליטת תמציות והפקת שמנים"
+        },
+        {
+          "id": 16,
+          "type": "SINGLE_CHOICE",
+          "question": "מהו המקור של מנהג התחפושות בפורים?",
+          "question_theme": "מנהגי חג הפורים ומשמעותם",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. כדי להקל על הזיהוי בים ההמון",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. כדי להסתיר את זהות המיעוט",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. כדי להיות יצירתי ולהפוך את היום לבלתי נשכח",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. כדי להפתיע את השכנים עם סטייל חדש 😎",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "כדי להסתיר את זהות המיעוט"
+        },
+        {
+          "id": 17,
+          "type": "SINGLE_CHOICE",
+          "question": "אם שני חצאים יוצרים שלם, כמה חצאים דרושים ל-5 שלמים?",
+          "question_theme": "חידות הגיון פשוטות",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. 8",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. 10",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. 5",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. 12",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "10"
+        },
+        {
+          "id": 18,
+          "type": "SINGLE_CHOICE",
+          "question": "יש לך שני חבלים – כל אחד נשרב במשך שעה, אך לא נשרבים בקצב אחיד. איך תמדוד 45 דקות בעזרת החבלים בלבד?",
+          "question_theme": "חידות הגיון קשות",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. להדליק את חבל אחד משני קצוותיו, ולחכות עד שייגמר, ואז להדליק את קצהו השני של החבל השני",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. להדליק את חבל אחד משני קצוותיו, וכאשר הוא ייגמר, 30 דקות חלפו",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. להדליק את חבל אחד מכל צד ולחכות ל-45 דקות",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. להדליק את שני החבלים מקצה אחד בלבד",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "להדליק את חבל אחד משני קצוותיו, ולחכות עד שייגמר, ואז להדליק את קצהו השני של החבל השני"
+        },
+        {
+          "id": 19,
+          "type": "SINGLE_CHOICE",
+          "question": "מה היה המניע העיקרי של המן להשמדת היהודים?",
+          "question_theme": "מגילת אסתר",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. רצון לשפר את מעמדו האישי",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. שנאה אישית כלפי מרדכי",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. ניסיון לעורר סערה פוליטית 🤷",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. קנאה בזכותו של מרדכי והעדפת היהודים",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "שנאה אישית כלפי מרדכי"
+        },
+        {
+          "id": 20,
+          "type": "SINGLE_CHOICE",
+          "question": "איזו מערכת השקיה נחשבת ליעילה בגידול קנאביס בחממה?",
+          "question_theme": "גידול קנאביס רפואי בחממה",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. השקיה אקראית",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. השקיה בטפטוף",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. השקיית \"הפתעה\" – מים פעם ביום 🎁",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. השקיה בפיזור מים",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "השקיה בטפטוף"
+        },
+        {
+          "id": 21,
+          "type": "SINGLE_CHOICE",
+          "question": "מהו אחד האתגרים הגדולים בתהליכי הפקת קנאביס רפואי בישראל?",
+          "question_theme": "שוק הקנאביס הרפואי הישראלי",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. לנהל מפגש שבועי עם רגולטורים 😅",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. השגת חומרי גלם טריים מדי יום",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. עמידה בתקני איכות ובקרה קפדנית",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. לשמור על \"קסם\" טבעי מבלי להיסחף",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "עמידה בתקני איכות ובקרה קפדנית"
+        },
+        {
+          "id": 22,
+          "type": "SINGLE_CHOICE",
+          "question": "מהי חשיבותו של ניתוח גנטי בבחירת הזנים לגידול רפואי?",
+          "question_theme": "שוק הקנאביס הרפואי הישראלי",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. לקבוע את צבע העלים בלבד",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. להבטיח תכולת קנבינואידים ואיכות טיפולית",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. להוסיף נופך מודרני למוצר 🌱",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. רק כדי להראות \"מדעי\" במסמכים",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "להבטיח תכולת קנבינואידים ואיכות טיפולית"
+        },
+        {
+          "id": 23,
+          "type": "SINGLE_CHOICE",
+          "question": "מהי משמעות משלוח מנות במנהגי הפורים?",
+          "question_theme": "מנהגי חג הפורים ומשמעותם",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. ביטוי לאחדות והפצת שמחה",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. מסיבת אוכל קטנה בין חברים 🍰",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. רק כדי לספר \"סיפור הצלחה\" במתכונים",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. כדי להתחרות במתכונים הכי מקוריים",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "ביטוי לאחדות והפצת שמחה"
+        },
+        {
+          "id": 24,
+          "type": "SINGLE_CHOICE",
+          "question": "אם היום יום חמישי, מהו היום שאחריו?",
+          "question_theme": "חידות הגיון פשוטות",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. שני",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. שבת",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. שישי",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. רביעי",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "שישי"
+        },
+        {
+          "id": 25,
+          "type": "SINGLE_CHOICE",
+          "question": "באיזה מקום התרחש רוב העלילה במגילה?",
+          "question_theme": "מגילת אסתר",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. ממלכה דמיונית 😆",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. בבל",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. שושן הבירה",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. פרס",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "שושן הבירה"
+        },
+        {
+          "id": 26,
+          "type": "SINGLE_CHOICE",
+          "question": "מדוע חשוב לעקוב אחרי רמות ה-pH בקרקע?",
+          "question_theme": "גידול קנאביס רפואי בחממה",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. כדי להתאים את צבע הפרחים",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. כדי להבטיח ספיגת חומרים מזינים מיטבית",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. כדי למנוע 'התנגדות' מהצמחים 😅",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. כדי לדעת מתי להחליף את האדמה",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "כדי להבטיח ספיגת חומרים מזינים מיטבית"
+        },
+        {
+          "id": 27,
+          "type": "SINGLE_CHOICE",
+          "question": "מהי חשיבותו של ניתוח גנטי בבחירת הזנים לגידול רפואי?",
+          "question_theme": "שוק הקנאביס הרפואי הישראלי",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. לקבוע את צבע העלים בלבד",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. להבטיח תכולת קנבינואידים ואיכות טיפולית",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. להוסיף נופך מודרני למוצר 🌱",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. רק כדי להראות \"מדעי\" במסמכים",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "להבטיח תכולת קנבינואידים ואיכות טיפולית"
+        },
+        {
+          "id": 28,
+          "type": "SINGLE_CHOICE",
+          "question": "מהי משמעותו של שיר 'הנה מה טוב' שמושר בפורים?",
+          "question_theme": "מנהגי חג הפורים ומשמעותם",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. רק כדי למלא את הזמן בין מנהגים",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. כדי לזכור שכולם מתמזגים בטעם טוב",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. קריאת שיר עם אנרגיה חגיגית 🎤",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. להדגיש את השמחה והאחדות",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "להדגיש את השמחה והאחדות"
+        },
+        {
+          "id": 29,
+          "type": "SINGLE_CHOICE",
+          "question": "כמה אפסים יש במספר 1000?",
+          "question_theme": "חידות הגיון פשוטות",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. 1",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. 3",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. 4",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. 2",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "3"
+        },
+        {
+          "id": 30,
+          "type": "SINGLE_CHOICE",
+          "question": "בחורה של 100 כדורים ממוספרים 1 עד 100, כאשר בכל חילוף ניתן להחליף רק שני כדורים, מהו מספר החילופים המינימלי הדרוש למיון מלא – במקרה הגרוע?",
+          "question_theme": "חידות הגיון קשות",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. תלוי בסידור ההתחלתי",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. 100",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. 50",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. 99",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "99"
+        },
+        {
+          "id": 31,
+          "type": "SINGLE_CHOICE",
+          "question": "מהי הסיבה המרכזית להקמת חג הפורים על פי המגילה?",
+          "question_theme": "מגילת אסתר",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. חגיגה של יום הולדת המלך",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. נצחון צבאי",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. מסיבת הפתעה עם הפתעות 🎉",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. הצלת היהודים מהשמדה",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "הצלת היהודים מהשמדה"
+        },
+        {
+          "id": 32,
+          "type": "SINGLE_CHOICE",
+          "question": "איזו גישה מומלצת למניעת מזיקים ומחלות בחממה?",
+          "question_theme": "גידול קנאביס רפואי בחממה",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. ריסוס תדיר בחומרי כימיקלים",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. התחפשות למטהר אוויר",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. שימוש בשיטות ביולוגיות וטבעיות",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. שיחה מנחמת עם הצמחים 🌿",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "שימוש בשיטות ביולוגיות וטבעיות"
+        },
+        {
+          "id": 33,
+          "type": "SINGLE_CHOICE",
+          "question": "איזה מהגורמים משפיע על איכות התוצר הסופי?",
+          "question_theme": "שוק הקנאביס הרפואי הישראלי",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. סוג האריזה בלבד",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. בדיקות 'טעימות' של העובדים 😉",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. בקרת איכות ותהליכים מובנים",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. תדירות 'מסיבות' במפעל",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "בקרת איכות ותהליכים מובנים"
+        },
+        {
+          "id": 34,
+          "type": "SINGLE_CHOICE",
+          "question": "מהו תפקיד הרגולטור הישראלי בשוק הקנאביס הרפואי?",
+          "question_theme": "שוק הקנאביס הרפואי הישראלי",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. הגדרת 'טרנדים' לשיווק בלבד",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. מתן חוות דעת על טעם המוצר",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. פיקוח ובקרה על תהליכי ייצור והפצה",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. ארגון כנסים עם קוקטיילים 🍹",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "פיקוח ובקרה על תהליכי ייצור והפצה"
+        },
+        {
+          "id": 35,
+          "type": "SINGLE_CHOICE",
+          "question": "איזה תהליך נדרש לרישום מוצר קנאביס רפואי בישראל?",
+          "question_theme": "שוק הקנאביס הרפואי הישראלי",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. הצגת סרטון 'היכרות' עם הצמח",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. בדיקות מעבדה, ניסויים קליניים והגשת מסמכים",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. רק תמונות יפות למוצר",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. חתימת הסכם עם מפיק מוזיקלי 😉",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "בדיקות מעבדה, ניסויים קליניים והגשת מסמכים"
+        },
+        {
+          "id": 36,
+          "type": "SINGLE_CHOICE",
+          "question": "מדוע נהוג לשמוח ולרקוד בפורים?",
+          "question_theme": "מנהגי חג הפורים ומשמעותם",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. פשוט כי כל אחד אוהב ריקודים 🎉",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. כדי להתחרות עם הפתעות חג אחרות",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. כדי לבטא את השמחה הגדולה בעקבות הנס",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. כדרך להוציא אנרגיות אחרי החורף",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "כדי לבטא את השמחה הגדולה בעקבות הנס"
+        },
+        {
+          "id": 37,
+          "type": "SINGLE_CHOICE",
+          "question": "אם אתה מכפיל מספר ב-1, מהי התוצאה?",
+          "question_theme": "חידות הגיון פשוטות",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. כפול אחד",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. המספר עצמו",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. אפס",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. 1",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "המספר עצמו"
+        },
+        {
+          "id": 38,
+          "type": "SINGLE_CHOICE",
+          "question": "אם המשפט \"החתול קופץ על השולחן\" נאמר כשבפועל החתול נמצא מתחת לשולחן, האם המשפט נכון?",
+          "question_theme": "חידות הגיון קשות",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. תלוי בהקשר",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. כן",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. לא",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. אי אפשר לדעת",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "לא"
+        },
+        {
+          "id": 39,
+          "type": "SINGLE_CHOICE",
+          "question": "מי מהדמויות השפיע ביותר על המלך להיטיב עם היהודים?",
+          "question_theme": "מגילת אסתר",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. אסתר",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. מרדכי",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. אף אחת – כולם בסערה 😜",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. המן",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "מרדכי"
+        },
+        {
+          "id": 40,
+          "type": "SINGLE_CHOICE",
+          "question": "מהו תפקידם של הדשנים בתהליך הגידול?",
+          "question_theme": "גידול קנאביס רפואי בחממה",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. להאיץ את תהליך הפריחה רק בשביל האסתטיקה",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. לספק את המזון הדרוש לצמחים",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. לגרום לצמחים להרגיש 'מוערכים' 😊",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. לצבוע את העלים בגוונים מיוחדים",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "לספק את המזון הדרוש לצמחים"
+        },
+        {
+          "id": 41,
+          "type": "SINGLE_CHOICE",
+          "question": "מהו תפקיד הרגולטור הישראלי בשוק הקנאביס הרפואי?",
+          "question_theme": "שוק הקנאביס הרפואי הישראלי",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. הגדרת 'טרנדים' לשיווק בלבד",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. מתן חוות דעת על טעם המוצר",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. פיקוח ובקרה על תהליכי ייצור והפצה",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. ארגון כנסים עם קוקטיילים 🍹",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "פיקוח ובקרה על תהליכי ייצור והפצה"
+        },
+        {
+          "id": 42,
+          "type": "SINGLE_CHOICE",
+          "question": "מהי סיבת הקשר בין קריאת המגילה למנהג התחפושות?",
+          "question_theme": "מנהגי חג הפורים ומשמעותם",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. כדי להראות את היצירתיות של כל משתתף",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. פשוט כדי להוסיף צבע לחג 🌈",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. להמחיש כיצד אנשים יכולים להשתנות ולהסתתר",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. כי אין דבר יותר כיף מלשנות זהות",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "להמחיש כיצד אנשים יכולים להשתנות ולהסתתר"
+        },
+        {
+          "id": 43,
+          "type": "SINGLE_CHOICE",
+          "question": "אם היום יום חמישי, מהו היום שאחריו?",
+          "question_theme": "חידות הגיון פשוטות",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. שבת",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. שישי",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. שני",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. רביעי",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "שישי"
+        },
+        {
+          "id": 44,
+          "type": "SINGLE_CHOICE",
+          "question": "יש לך 100 מנורות בסדר קבוע, אך רק אחת מהן נדלקת כאשר לוחצים על כפתור מסתורי. באיזו גישה תמצא את המנורה הנכונה?",
+          "question_theme": "חידות הגיון קשות",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. לבדוק מנורה אחת בכל ניסיון",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. להדליק את כל המנורות בכל ניסיון ולבדוק איזו כבה",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. לבחור באופן אקראי בכל ניסיון",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. לבחור קבוצות מנורות שונות בכל ניסוי לפי אלגוריתם חלוקה בינארי",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "בחירת קבוצות מנורות שונות בכל ניסוי לפי אלגוריתם חלוקה בינארי"
+        },
+        {
+          "id": 45,
+          "type": "SINGLE_CHOICE",
+          "question": "מה היה מצבה של אסתר לפני שנבחרה למלכה?",
+          "question_theme": "מגילת אסתר",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. נסיכה ממדינה שכנה",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. נערה יהודייה מסורתית",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. נערה ממעמד אחר",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. עובדת בממלכה 🤭",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "נערה יהודייה מסורתית"
+        },
+        {
+          "id": 46,
+          "type": "SINGLE_CHOICE",
+          "question": "מהי החשיבות של בקרת לחות בחממה?",
+          "question_theme": "גידול קנאביס רפואי בחממה",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. לשמור על מרקם העלים",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. למנוע התפתחות עובש ומחלות",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. ליצור תחושה נעימה למגדל",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. כדי שהצמחים לא 'יתייבשו' מצחוק 😆",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "למנוע התפתחות עובש ומחלות"
+        },
+        {
+          "id": 47,
+          "type": "SINGLE_CHOICE",
+          "question": "מהו אחד מהיעדים המרכזיים של חברות הקנאביס הרפואי בישראל?",
+          "question_theme": "שוק הקנאביס הרפואי הישראלי",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. להיות המובילים בתחום העיצוב הירוק",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. השקת מוצרים בשילוב 'סטייל' ישראלי",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. פיתוח מוצרים בטוחים ויעילים למטופלים",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. להפתיע את השוק עם חידושים מדי חודש 🚀",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "פיתוח מוצרים בטוחים ויעילים למטופלים"
+        },
+        {
+          "id": 48,
+          "type": "SINGLE_CHOICE",
+          "question": "מהי הסיבה למנהג לשתות יין בפורים?",
+          "question_theme": "מנהגי חג הפורים ומשמעותם",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. כדי לשבור את הקרח במסיבות",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. לסמל שחרור ושמחה עד קיצון",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. כדי להוסיף קצת צבע ליום 😜",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. כדי 'להבריש' את השגרה",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "לסמל שחרור ושמחה עד קיצון"
+        },
+        {
+          "id": 49,
+          "type": "SINGLE_CHOICE",
+          "question": "אם לילה אחד עובר, מה מגיע אחריו?",
+          "question_theme": "חידות הגיון פשוטות",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. לילה נוסף",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. הבוקר מגיע",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. חלום חדש",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. הזמן עוצר 😴",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "הבוקר מגיע"
+        },
+        {
+          "id": 50,
+          "type": "SINGLE_CHOICE",
+          "question": "אם יש לך 3 דליים – כל אחד מתחיל עם 10 ליטרים. בדליי הראשון מוסיפים 2 ליטרים, בשני מוסיפים 2 ליטרים, ובשלישי מורידים 1 ליטר – מהי כמות המים הכוללת לאחר הפעולות?",
+          "question_theme": "חידות הגיון קשות",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. 31 ליטרים",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. 33 ליטרים",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. 36 ליטרים",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. 30 ליטרים",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "33 ליטרים"
+        },
+        {
+          "id": 51,
+          "type": "SINGLE_CHOICE",
+          "question": "מהו תפקידו של מרדכי במגילה?",
+          "question_theme": "מגילת אסתר",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. יועץ למלכה",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. מנהיג קהילתי יהודי",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. שכן שמסתובב במסיבות 😎",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. שומר במקדש",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "מנהיג קהילתי יהודי"
+        },
+        {
+          "id": 52,
+          "type": "SINGLE_CHOICE",
+          "question": "איזו טכניקה נחשבת חשובה לאופטימיזציה של פריחת הצמח?",
+          "question_theme": "גידול קנאביס רפואי בחממה",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. צביעה מחדש של העלים",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. טיפוח נכנס ומדוד של אור ואוויר",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. עיצוב חיצוני מושקע לחממה",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. 'עידוד' פסיכולוגי בצמחים 😇",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "טיפוח נכנס ומדוד של אור ואוויר"
+        },
+        {
+          "id": 53,
+          "type": "SINGLE_CHOICE",
+          "question": "מהו היתרון של שילוב טכנולוגיות חכמות בתהליכי הגידול?",
+          "question_theme": "שוק הקנאביס הרפואי הישראלי",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. למען תחושת 'עתידנות' בכל פינה 🤖",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. יצירת 'בית חכם' גם לצמחים",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. ניטור בזמן אמת ושיפור תנאי גידול",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. כדי להתחרות עם תעשיית הסלולר",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "ניטור בזמן אמת ושיפור תנאי גידול"
+        },
+        {
+          "id": 54,
+          "type": "SINGLE_CHOICE",
+          "question": "איזה מסר מוסרי מועבר באמצעות מנהג מתנות לאביונים?",
+          "question_theme": "מנהגי חג הפורים ומשמעותם",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. לעזור ולהפיץ אהבה",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. שיתוף ואחריות חברתית",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. להראות שגם קטנים יכולים לשנות את העולם 💖",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. לקבל ולהיות מקובל בחברה",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "שיתוף ואחריות חברתית"
+        },
+        {
+          "id": 55,
+          "type": "SINGLE_CHOICE",
+          "question": "אם תערבב מים עם קצת צחוק, מה תקבל?",
+          "question_theme": "חידות הגיון פשוטות",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. חווית חיים",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. מיץ פירות",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. בדיחה רטובה",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. אין קשר 🤣",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "בדיחה רטובה"
+        },
+        {
+          "id": 56,
+          "type": "SINGLE_CHOICE",
+          "question": "אם יש לך 3 דליים – כל אחד מתחיל עם 10 ליטרים, ובדליי הראשון מוסיפים 2, בשני מוסיפים 2, ובשלישי מורידים 1 – מהי כמות המים הכוללת לאחר הפעולות?",
+          "question_theme": "חידות הגיון קשות",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. 31 ליטרים",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. 33 ליטרים",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. 36 ליטרים",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. 30 ליטרים",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "33 ליטרים"
+        },
+        {
+          "id": 57,
+          "type": "SINGLE_CHOICE",
+          "question": "כיצד הציגה אסתר את תוכניתה להצלת עמה?",
+          "question_theme": "מגילת אסתר",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. באמצעות תחפושות והפתעות 🧙",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. במשא ומתן ישיר עם המלך",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. בהפגנת קסמים",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. בגיוס כוחות צבאיים",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "במשא ומתן ישיר עם המלך"
+        },
+        {
+          "id": 58,
+          "type": "SINGLE_CHOICE",
+          "question": "כיצד משפיע שליטה בתנאי הסביבה על איכות הקנאביס הרפואי?",
+          "question_theme": "גידול קנאביס רפואי בחממה",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. משפיע על הגודל בלבד",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. משנה את הטעם באופן דרמטי",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. גורם לצמחים לשיר בשעות הלילה 🎤",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. מאפשר פיתוח ריכוזים נכונים של קנבינואידים",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "מאפשר פיתוח ריכוזים נכונים של קנבינואידים"
+        },
+        {
+          "id": 59,
+          "type": "SINGLE_CHOICE",
+          "question": "כיצד משפיעה איכות הקרקע והמים על גידול הקנאביס הרפואי?",
+          "question_theme": "שוק הקנאביס הרפואי הישראלי",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. לא משפיעה בכלל – זה הכל במערכות האוטומטיות",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. משפרת את ספיגת המזינים ואת הצמיחה",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. רק בשביל שהצמח ירגיש 'חופשי'",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. מוסיפה נופך 'כפרי' למוצר 🌾",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "משפרת את ספיגת המזינים ואת הצמיחה"
+        },
+        {
+          "id": 60,
+          "type": "SINGLE_CHOICE",
+          "question": "מהו תפקידו של 'המזלג החגיגי' בפורים אצל חלק מהקהילות?",
+          "question_theme": "מנהגי חג הפורים ומשמעותם",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. לתת נופך 'קולינרי' לחג 🥄",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. לאחד בין מסורת לחדשנות",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. רק כקישוט על שולחן החג",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. כדי לסמל את שברירי המצב החברתי",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "לאחד בין מסורת לחדשנות"
+        },
+        {
+          "id": 61,
+          "type": "SINGLE_CHOICE",
+          "question": "אם 2+2 שווה ל-4, מהו התוצאה של 3+3?",
+          "question_theme": "חידות הגיון פשוטות",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. 8",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. 7",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. 6",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. 5",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "6"
+        },
+        {
+          "id": 62,
+          "type": "SINGLE_CHOICE",
+          "question": "אם יש לך 8 אנשים מסודרים בקו, כמה זוגות של אנשים עוקבים קיימים?",
+          "question_theme": "חידות הגיון קשות",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. 9",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. 6",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. 7",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. 8",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "7"
+        },
+        {
+          "id": 63,
+          "type": "SINGLE_CHOICE",
+          "question": "אם יש לך 12 כדורים זהים, כאשר אחד מהם שוקל שונה – כיצד תזהה את הכדור החריג?",
+          "question_theme": "חידות הגיון קשות",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. לחלק את הכדורים ל-3 קבוצות שוות ולבדוק איזו קבוצה שוקלת אחרת",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. להשוות כדור אחד מול כדור אחד בכל פעם",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. אין פתרון במסגרת 3 מדידות",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. לשקל את כל הכדורים יחד מול קבוצת כדורים זהה",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "לחלק את הכדורים ל-3 קבוצות שוות ולבדוק איזו קבוצה שוקלת אחרת"
+        },
+        {
+          "id": 64,
+          "type": "SINGLE_CHOICE",
+          "question": "אם המשפט \"החתול קופץ על השולחן\" נאמר כשבפועל החתול נמצא מתחת לשולחן, האם המשפט נכון?",
+          "question_theme": "חידות הגיון קשות",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. תלוי בהקשר",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. כן",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. לא",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. אי אפשר לדעת",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "לא"
+        },
+        {
+          "id": 65,
+          "type": "SINGLE_CHOICE",
+          "question": "אם שלושה עובדים מסוגלים לסיים פרויקט ב-6 ימים, כמה ימים ייקח לשישה עובדים להשלים את אותו הפרויקט?",
+          "question_theme": "חידות הגיון קשות",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. 4 ימים",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. 2 ימים",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. 3 ימים",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. 6 ימים",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "3 ימים"
+        },
+        {
+          "id": 66,
+          "type": "SINGLE_CHOICE",
+          "question": "מהו תפקידו של 'המזלג החגיגי' בפורים?",
+          "question_theme": "מנהגי חג הפורים ומשמעותם",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. לתת נופך 'קולינרי' לחג 🥄",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. לאחד בין מסורת לחדשנות",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. רק כקישוט על שולחן החג",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. כדי לסמל את שברירי המצב החברתי",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "לאחד בין מסורת לחדשנות"
+        },
+        {
+          "id": 67,
+          "type": "SINGLE_CHOICE",
+          "question": "אם 2+2 שווה ל-4, מהו התוצאה של 3+3?",
+          "question_theme": "חידות הגיון פשוטות",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. 8",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. 7",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. 6",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. 5",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "6"
+        },
+        {
+          "id": 68,
+          "type": "SINGLE_CHOICE",
+          "question": "אם יש לך 8 אנשים מסודרים בקו, כמה זוגות של אנשים עוקבים קיימים?",
+          "question_theme": "חידות הגיון קשות",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. 9",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. 6",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. 7",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. 8",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "7"
+        },
+        {
+          "id": 69,
+          "type": "SINGLE_CHOICE",
+          "question": "אם יש לך 10 קלפים על שולחן ואתה מסיר קלף אחד בכל תור, כמה תורות נדרשות להסרת כל הקלפים?",
+          "question_theme": "חידות הגיון קשות",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. 9",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. 11",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. 10",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. 5",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "10"
+        },
+        {
+          "id": 70,
+          "type": "SINGLE_CHOICE",
+          "question": "מי מהדמויות השפיע ביותר על המלך להיטיב עם היהודים?",
+          "question_theme": "מגילת אסתר",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. אסתר",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. מרדכי",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. אף אחת – כולם בסערה 😜",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. המן",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "מרדכי"
+        },
+        {
+          "id": 71,
+          "type": "SINGLE_CHOICE",
+          "question": "איזה תהליך טבעי נדרש לשיפור הפריחה בגידול קנאביס בחממה?",
+          "question_theme": "גידול קנאביס רפואי בחממה",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. תנודות אקראיות בטמפרטורה",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. רק חום קיצי ללא הפסקה",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. מחזור אור יום ולילה מאוזן",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. שימוש בשעון מעורר לצמחים ⏰",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "מחזור אור יום ולילה מאוזן"
+        },
+        {
+          "id": 72,
+          "type": "SINGLE_CHOICE",
+          "question": "איזה מהשלבים הבאים אינו חלק מתהליך הפקת קנאביס רפואי?",
+          "question_theme": "שוק הקנאביס הרפואי הישראלי",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. ניסויים ובדיקות מעבדה 😉",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. תהליך מיתוג ועיצוב אריזות",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. שיווק מוצרי מזון – לא חלק מהתהליך",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. גידול, הפקה ובקרה איכותית",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "שיווק מוצרי מזון – לא חלק מהתהליך"
+        },
+        {
+          "id": 73,
+          "type": "SINGLE_CHOICE",
+          "question": "מהי סיבת הקשר לכך שמנהגי הפורים כוללים גם אלמנטים 'הפוכים' ובלתי צפויים?",
+          "question_theme": "מנהגי חג הפורים ומשמעותם",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. כדי ליצור ניגודים מעניינים",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. כדי לשעשע ולהפתיע",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. פשוט כי ההפך מוסיף טעם לחג 🤪",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. כדי לעודד חשיבה יצירתית ולשבור שגרה",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "כדי לעודד חשיבה יצירתית ולשבור שגרה"
+        },
+        {
+          "id": 74,
+          "type": "SINGLE_CHOICE",
+          "question": "אם שני אנשים נפגשים ומשוחחים, כמה צדדים יש לשיחה?",
+          "question_theme": "חידות הגיון פשוטות",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. 4",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. 2",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. 3",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. 1",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "2"
+        },
+        {
+          "id": 75,
+          "type": "SINGLE_CHOICE",
+          "question": "אם המשפט \"החתול קופץ על השולחן\" נאמר כשבפועל החתול נמצא מתחת לשולחן, האם המשפט נכון?",
+          "question_theme": "חידות הגיון קשות",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. תלוי בהקשר",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. כן",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. לא",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. אי אפשר לדעת",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "לא"
+        },
+        {
+          "id": 76,
+          "type": "SINGLE_CHOICE",
+          "question": "איזה תהליך מהבאים מהווה חלק מהייצור הרפואי של הקנאביס?",
+          "question_theme": "חידות הגיון קשות",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. לחלק את הכדורים ל-3 קבוצות שוות ולבדוק איזו קבוצה שוקלת אחרת",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. להשוות כדור אחד מול כדור אחד בכל פעם",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. אין פתרון במסגרת 3 מדידות",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. לשקל את כל הכדורים יחד מול קבוצת כדורים זהה",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "לחלק את הכדורים ל-3 קבוצות שוות ולבדוק איזו קבוצה שוקלת אחרת"
+        },
+        {
+          "id": 77,
+          "type": "SINGLE_CHOICE",
+          "question": "אם כל פינה במרובע היא 90° – מהי מידה אחת של פינה?",
+          "question_theme": "חידות הגיון פשוטות",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. 45°",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. 360°",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. 90°",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. 180°",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "90°"
+        },
+        {
+          "id": 78,
+          "type": "SINGLE_CHOICE",
+          "question": "אם אתה רואה 3 ציפורים על עץ וצייד יורה, כמה ציפורים נשארות על העץ?",
+          "question_theme": "חידות הגיון קשות",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. 1",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. 3",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. 0",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. 2",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "0"
+        },
+        {
+          "id": 79,
+          "type": "SINGLE_CHOICE",
+          "question": "באיזה סגנון נכתבת מגילת אסתר?",
+          "question_theme": "מגילת אסתר",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. בשפה מודרנית קלילה",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. בשפה פיוטית עתיקה",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. בסגנון סיפורי עם נגיעות דרמטיות 📚",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. בשפה טכנית ומשעממת",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "בשפה פיוטית עתיקה"
+        },
+        {
+          "id": 80,
+          "type": "SINGLE_CHOICE",
+          "question": "מהו האתגר המרכזי בגידול קנאביס רפואי בחממה?",
+          "question_theme": "גידול קנאביס רפואי בחממה",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. מציאת המיקום הכי שקט",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. יצירת תנאים אופטימליים לכל שלבי החיים של הצמח",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. לשכנע את הצמחים שהם לא סתם ירקות 😉",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. להתאים את מערכת השקיה לקצב הגידול",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "יצירת תנאים אופטימליים לכל שלבי החיים של הצמח"
+        },
+        {
+          "id": 81,
+          "type": "SINGLE_CHOICE",
+          "question": "כיצד משפיע תהליך הפקת שמנים ותמציות על יעילות המוצר?",
+          "question_theme": "שוק הקנאביס הרפואי הישראלי",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. גורם לשינוי טעם בלבד",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. מאפשר ריכוז מרכיבים פעילים לשימוש רפואי",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. מוסיף ניחוח 'אורגני' במיוחד 🌸",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. רק מראה 'מרשים' על המדף",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "מאפשר ריכוז מרכיבים פעילים לשימוש רפואי"
+        },
+        {
+          "id": 82,
+          "type": "SINGLE_CHOICE",
+          "question": "מהו הקשר בין קריאת המגילה לבין מנהגי הנתינה בפורים?",
+          "question_theme": "מנהגי חג הפורים ומשמעותם",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. כדי להראות סולידריות",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. שני המנהגים מדגישים את ההצלה וההתחדשות",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. כדי לחזק את תחושת הקהילה",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. פשוט כדי להוסיף עוד טעמים לשמחה 🍬",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "שני המנהגים מדגישים את ההצלה וההתחדשות"
+        },
+        {
+          "id": 83,
+          "type": "SINGLE_CHOICE",
+          "question": "אם אתה רואה 3 ציפורים על עץ וצייד יורה, כמה ציפורים נשארות על העץ?",
+          "question_theme": "חידות הגיון פשוטות",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. 3",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. 0",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. 1",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. 2",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "0"
+        },
+        {
+          "id": 84,
+          "type": "SINGLE_CHOICE",
+          "question": "בחבורה של 4 אחים, כל אחד מהם אומר \"אחי האמצעי הוא הבכור\". כמה מהם באמת יכול להיות הבכור?",
+          "question_theme": "חידות הגיון קשות",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. 1",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. 0",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. 2",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. 4",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "1"
+        },
+        {
+          "id": 85,
+          "type": "SINGLE_CHOICE",
+          "question": "כיצד מתבטא הקונפליקט המרכזי במגילה?",
+          "question_theme": "מגילת אסתר",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. במאבק בין מצוות לדילמות מודרניות 🤔",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. במאבק בין היהודים לתוכנית ההשמדה",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. במחלוקת בין אסתר למרדכי",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. במאבק בין המן ליהודה",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "במאבק בין היהודים לתוכנית ההשמדה"
+        },
+        {
+          "id": 86,
+          "type": "SINGLE_CHOICE",
+          "question": "מהו תפקיד הגנטיקה בבחירת זנים לגידול רפואי?",
+          "question_theme": "גידול קנאביס רפואי בחממה",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. לא משפיעה כלל – זה רק מין 'חיפזון'",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. השפעה ישירה על תכולת קנבינואידים והאפקטים הרפואיים",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. כדי להדגים את הגיוון הביולוגי 🌱",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. קביעת צבע העלים בלבד",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "השפעה ישירה על תכולת קנבינואידים והאפקטים הרפואיים"
+        },
+        {
+          "id": 87,
+          "type": "SINGLE_CHOICE",
+          "question": "מהי החשיבות של מחקרים קליניים בשוק הקנאביס הרפואי?",
+          "question_theme": "שוק הקנאביס הרפואי הישראלי",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. רק בשביל לקבל תקציבים נוספים",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. לאשש את היעילות והבטיחות של המוצרים",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. למען 'פיצוץ' בכנסים בינלאומיים 🔬",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. כדי לכתוב כתבות 'מדעיות'",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "לאשש את היעילות והבטיחות של המוצרים"
+        },
+        {
+          "id": 88,
+          "type": "SINGLE_CHOICE",
+          "question": "מדוע נהוג להסתיר את הפנים בתחפושות – מעבר למשחק?",
+          "question_theme": "מנהגי חג הפורים ומשמעותם",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. כדי ליצור אווירת מסתורין",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. כדי להזכיר את ההסתרה והגילוי בסיפור הפורים",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. כדי לשמור על פרטיות במפגשים",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. כדי להסתיר את עייפות היומיום 😴",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "כדי להזכיר את ההסתרה והגילוי בסיפור הפורים"
+        },
+        {
+          "id": 89,
+          "type": "SINGLE_CHOICE",
+          "question": "אם ספר עץ נופל ביער ואין אף אחד לשמוע – האם הוא משמיע קול?",
+          "question_theme": "חידות הגיון פשוטות",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. כן",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. זו שאלה פילוסופית",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. לא",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. תלוי בפרשנות",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "זו שאלה פילוסופית"
+        },
+        {
+          "id": 90,
+          "type": "SINGLE_CHOICE",
+          "question": "אם אתה עולה במדרגות ולא נופל, לאן אתה הולך?",
+          "question_theme": "חידות הגיון קשות",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. למעלה",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. למטה",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. לא נעים להחליט",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. לסיבוב חזרה 😉",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "למעלה"
+        },
+        {
+          "id": 91,
+          "type": "SINGLE_CHOICE",
+          "question": "מהו המסר החברתי העמוק במגילת אסתר?",
+          "question_theme": "מגילת אסתר",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. חשיבות האחדות והנחישות",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. קריאה להסתגלות למציאות משתנה",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. קריאה לעזרה הדדית 😇",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. עידוד לחירות אישית",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "חשיבות האחדות והנחישות"
+        },
+        {
+          "id": 92,
+          "type": "SINGLE_CHOICE",
+          "question": "איך נמדדת יעילות מערכת ההשקיה בחממה?",
+          "question_theme": "גידול קנאביס רפואי בחממה",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. על ידי מעקב אחרי ספיגת המים והבריאות של הצמחים",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. לפי מספר הצמחים 'השחויים'",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. לפי תדירות הקריאות של 'מים, מים'",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. באמצעות חיישני קריצה למים 😉",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "על ידי מעקב אחרי ספיגת המים והבריאות של הצמחים"
+        },
+        {
+          "id": 93,
+          "type": "SINGLE_CHOICE",
+          "question": "מהו תפקיד שיתוף הפעולה בין חברות בתחום הקנאביס הרפואי?",
+          "question_theme": "שוק הקנאביס הרפואי הישראלי",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. קידום מחקרים והרחבת אפשרויות טיפול",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. להבטיח תחרות ידידותית",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. כדי להחליף מתכונים סודיים",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. להוביל 'חברות על' בשוק המקומי 🤝",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "קידום מחקרים והרחבת אפשרויות טיפול"
+        },
+        {
+          "id": 94,
+          "type": "SINGLE_CHOICE",
+          "question": "איזה מסר סמלי טמון במנהג 'משלוח מנות' בקרב ילדים ומבוגרים?",
+          "question_theme": "מנהגי חג הפורים ומשמעותם",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. לחלק את השמחה ולחזק קשרים",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. ליצור תחרות על המתנות הכי מקוריות",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. להזכיר את המשמעות העמוקה של נתינה",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. כדי לראות מי יכול לארוז הכי מהר 🎁",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "לחלק את השמחה ולחזק קשרים"
+        },
+        {
+          "id": 95,
+          "type": "SINGLE_CHOICE",
+          "question": "אם 2+2 שווה ל-4, מהו התוצאה של 3+3?",
+          "question_theme": "חידות הגיון פשוטות",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. 6",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. 5",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. 7",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. 8",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "6"
+        },
+        {
+          "id": 96,
+          "type": "SINGLE_CHOICE",
+          "question": "אם יש לך 10 קלפים על שולחן ואתה מסיר קלף אחד בכל תור, כמה תורות נדרשות להסרת כל הקלפים?",
+          "question_theme": "חידות הגיון קשות",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. 10",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. 9",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. 11",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. 5",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "10"
+        },
+        {
+          "id": 97,
+          "type": "SINGLE_CHOICE",
+          "question": "מהו תפקידם של הניסים במגילה?",
+          "question_theme": "מגילת אסתר",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. אמצעי להצלת היהודים",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. סמל לנפלאות הטבע",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. קוד סודי למאמינים",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. דבר שלא ניתן להסביר 😉",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "אמצעי להצלת היהודים"
+        },
+        {
+          "id": 98,
+          "type": "SINGLE_CHOICE",
+          "question": "איזה תהליך טבעי נדרש לשיפור הפריחה בגידול קנאביס בחממה?",
+          "question_theme": "גידול קנאביס רפואי בחממה",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. מחזור אור יום ולילה מאוזן",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. רק חום קיצי ללא הפסקה",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. תנודות אקראיות בטמפרטורה",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. שימוש בשעון מעורר לצמחים ⏰",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "מחזור אור יום ולילה מאוזן"
+        },
+        {
+          "id": 99,
+          "type": "SINGLE_CHOICE",
+          "question": "איזה מהשלבים הבאים אינו חלק מתהליך הפקת קנאביס רפואי?",
+          "question_theme": "שוק הקנאביס הרפואי הישראלי",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. שיווק מוצרי מזון – לא חלק מהתהליך",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. גידול, הפקה ובקרה איכותית",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. תהליך מיתוג ועיצוב אריזות",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. ניסויים ובדיקות מעבדה 😉",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "שיווק מוצרי מזון – לא חלק מהתהליך"
+        },
+        {
+          "id": 100,
+          "type": "SINGLE_CHOICE",
+          "question": "מהי הסיבה לכך שמנהגי הפורים כוללים גם אלמנטים 'הפוכים' ובלתי צפויים?",
+          "question_theme": "מנהגי חג הפורים ומשמעותם",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. כדי לעודד חשיבה יצירתית ולשבור שגרה",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. כדי לשעשע ולהפתיע",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. כדי ליצור ניגודים מעניינים",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. פשוט כי ההפך מוסיף טעם לחג 🤪",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "כדי לעודד חשיבה יצירתית ולשבור שגרה"
+        },
+        {
+          "id": 101,
+          "type": "SINGLE_CHOICE",
+          "question": "אם שני אנשים נפגשים ומשוחחים, כמה צדדים יש לשיחה?",
+          "question_theme": "חידות הגיון פשוטות",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. 2",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. 1",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. 3",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. 4",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "2"
+        },
+        {
+          "id": 102,
+          "type": "SINGLE_CHOICE",
+          "question": "אם המשפט \"החתול קופץ על השולחן\" נאמר כשבפועל החתול נמצא מתחת לשולחן, האם המשפט נכון?",
+          "question_theme": "חידות הגיון קשות",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. כן",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. לא",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. תלוי בהקשר",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. אי אפשר לדעת",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "לא"
+        },
+        {
+          "id": 103,
+          "type": "SINGLE_CHOICE",
+          "question": "כיצד השפיעה אסתר על החלטות המלך בסיום הסיפור?",
+          "question_theme": "מגילת אסתר",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. הפכה את דעתו לטובת היהודים",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. השפעתה הייתה זמנית בלבד",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. לא השפיעה כלל",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. גרמה לביקורת ציבורית מסיבית 😶",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "הפכה את דעתו לטובת היהודים"
+        },
+        {
+          "id": 104,
+          "type": "SINGLE_CHOICE",
+          "question": "מהו היתרון של שימוש במערכות אוטומטיות בחממה לצורך גידול קנאביס?",
+          "question_theme": "גידול קנאביס רפואי בחממה",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. למנוע התפתחות מחלות ומזיקים",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. להשוות את כל הצמחים יחד",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. להשוות בין קבוצות שונות",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. להוסיף תחושת 'עתידנות'",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "למנוע התפתחות מחלות ומזיקים"
+        },
+        {
+          "id": 105,
+          "type": "SINGLE_CHOICE",
+          "question": "כיצד משפיע מחזור חיי הצמח על בחירת השיטה לגידול?",
+          "question_theme": "שוק הקנאביס הרפואי הישראלי",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. משפיע על תזמון ההשקיה, התאורה והדישון",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. קובע את צבע העלים בלבד",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. לא משפיע כלל – זה קבוע מראש",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. גורם לצמחים 'להתעורר' בשעות שונות ⏰",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "משפיע על תזמון ההשקיה, התאורה והדישון"
+        },
+        {
+          "id": 106,
+          "type": "SINGLE_CHOICE",
+          "question": "כיצד משפיעים מנהגי הפורים על תחושת השייכות והקהילתיות?",
+          "question_theme": "מנהגי חג הפורים ומשמעותם",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. על ידי עידוד שיתוף פעולה ושמחה משותפת",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. כי כולם מתכנסים ליום אחד של חגיגה",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. כדי להראות את הייחודיות של כל קהילה",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. פשוט כי ביחד יותר כיף 🎊",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "על ידי עידוד שיתוף פעולה ושמחה משותפת"
+        },
+        {
+          "id": 107,
+          "type": "SINGLE_CHOICE",
+          "question": "אם יש לך 5 עוגות ואתה אוכל 2 מהן, כמה עוגות נשארות?",
+          "question_theme": "חידות הגיון פשוטות",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. 2",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. 3",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. 5",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. 7",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "3"
+        },
+        {
+          "id": 108,
+          "type": "SINGLE_CHOICE",
+          "question": "אם יש לך 100 פריטים במחיר כולל של 100 שקלים, כאשר 99 פריטים עולים 1 שקל ואחד עולה פחות – מהו המחיר של הפריט החריג?",
+          "question_theme": "חידות הגיון קשות",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. 0.50 שקלים",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. 0.75 שקלים",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. 1",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. 1.50",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "0.50 שקלים"
+        },
+        {
+          "id": 109,
+          "type": "SINGLE_CHOICE",
+          "question": "מהו הסימן המסורתי לחג הפורים כפי שמתואר במגילה?",
+          "question_theme": "מגילת אסתר",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. קריאת המגילה והתחפשות",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. חלוקת מתנות ומתנות",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. ארוחה חגיגית ענקית",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. משחקים ופעילויות מהנות 🎭",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "קריאת המגילה והתחפשות"
+        },
+        {
+          "id": 110,
+          "type": "SINGLE_CHOICE",
+          "question": "כיצד משפיעים תנאי האוויר (זרימה ומחזור) בחממה על גידול הקנאביס?",
+          "question_theme": "גידול קנאביס רפואי בחממה",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. שיפור החלפת גזים וחיזוק מערכת הפוטוסינתזה",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. מייצר ריח טרי במיוחד",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. גורם לצמחים לרקוד ברוח",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. פשוט נותן תחושה של חופשה בטבע 🍃",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "שיפור החלפת גזים וחיזוק מערכת הפוטוסינתזה"
+        },
+        {
+          "id": 111,
+          "type": "SINGLE_CHOICE",
+          "question": "מהו אחד מהיתרונות של ייצור פנים ישראלי בשוק הקנאביס הרפואי?",
+          "question_theme": "שוק הקנאביס הרפואי הישראלי",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. בקרת איכות מחמירה והתאמה לתקנים בינלאומיים",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. התמחות במסורת 'ירוקה' מקומית",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. ניהול תהליכים בצורה 'על פי החבר'ה'",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. ייצוג מקומי עם טוויסט של חדשנות 😇",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "בקרת איכות מחמירה והתאמה לתקנים בינלאומיים"
+        },
+        {
+          "id": 112,
+          "type": "SINGLE_CHOICE",
+          "question": "מהי המשמעות שמאחורי הסמליות של מסכות בתחפושות?",
+          "question_theme": "מנהגי חג הפורים ומשמעותם",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. חופש הביטוי והסתרת זהויות",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. יצירת אווירה של מסתורין ודרמה",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. להמחיש שכל אחד יכול להיות מי שהוא רוצה",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. סתם כדי להיראות מגניבים 🤩",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "חופש הביטוי והסתרת זהויות"
+        },
+        {
+          "id": 113,
+          "type": "SINGLE_CHOICE",
+          "question": "אם מחלקים 100 ב-4, מהי התוצאה?",
+          "question_theme": "חידות הגיון פשוטות",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. 25",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. 50",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. 20",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. 40",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "25"
+        },
+        {
+          "id": 114,
+          "type": "SINGLE_CHOICE",
+          "question": "בחבורה של 4 אחים, כל אחד מהם אומר \"אחי האמצעי הוא הבכור\". כמה מהם באמת יכול להיות הבכור?",
+          "question_theme": "חידות הגיון קשות",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. 1",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. 0",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. 2",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. 4",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "1"
+        },
+        {
+          "id": 115,
+          "type": "SINGLE_CHOICE",
+          "question": "איזו השפעה תרבותית והיסטורית נשארה למגילת אסתר עד היום?",
+          "question_theme": "מגילת אסתר",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. מקור להשראה ולעידוד לאחדות",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. רק סיפור לימודי היסטורי",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. סיפור מצחיק עם קטעים משעשעים",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. אגדת עתיקות שמזכירה זמנים אחרים 😅",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "מקור להשראה ולעידוד לאחדות"
+        },
+        {
+          "id": 116,
+          "type": "SINGLE_CHOICE",
+          "question": "מהי הגישה הנכונה לטיפול בצמחים בתקופות מעבר ועונות משתנות?",
+          "question_theme": "גידול קנאביס רפואי בחממה",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. התאמה מתמדת של המערכות – תאורה, השקיה, ולחות",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. המתנה עד שהצמחים 'יתגייסו' לטבע",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. החלפת מערכת ללא תכנון",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. שימוש בשיטות 'ניחוש' כדי לראות מה מתאים 🤔",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "התאמה מתמדת של המערכות – תאורה, השקיה, ולחות"
+        },
+        {
+          "id": 117,
+          "type": "SINGLE_CHOICE",
+          "question": "איזו אסטרטגיה שיווקית נחשבת ליעילה בשוק הקנאביס הרפואי הישראלי?",
+          "question_theme": "שוק הקנאביס הרפואי הישראלי",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. שילוב של ידע מדעי וסיפורים אישיים",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. מבצעים והנחות חמות מדי עונה",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. דגש על עיצוב אריזות מושך",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. קמפיינים ויראליים עם המון אמוג'ים 🎉",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "שילוב של ידע מדעי וסיפורים אישיים"
+        },
+        {
+          "id": 118,
+          "type": "SINGLE_CHOICE",
+          "question": "איזה מסר מרכזי מועבר מהמנהגים החגיגיים של הפורים?",
+          "question_theme": "מנהגי חג הפורים ומשמעותם",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. ניצחון השמחה על האפל והחשש",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. עידוד לשכוח את הדאגות היומיות",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. קריאה לאחדות ולחגיגה משותפת",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. להראות שהחיוך הוא המתכון לסיום מושלם 😄",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "ניצחון השמחה על האפל והחשש"
+        },
+        {
+          "id": 119,
+          "type": "SINGLE_CHOICE",
+          "question": "אם אתה נוסע במהירות קבועה של 60 קמ״ש, כמה קילומטרים אתה עובר בשעה?",
+          "question_theme": "חידות הגיון פשוטות",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. 60",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. 30",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. 90",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. 120",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "60"
+        },
+        {
+          "id": 120,
+          "type": "SINGLE_CHOICE",
+          "question": "אם שלושה עובדים מסוגלים לסיים פרויקט ב-6 ימים, כמה ימים ייקח לשישה עובדים להשלים את אותו הפרויקט?",
+          "question_theme": "חידות הגיון קשות",
+          "options": [
+            {
+              "returnValue": "1",
+              "displayValue": "1. 4 ימים",
+              "userExpectedAnswers": ["1", "one", "אחד"]
+            },
+            {
+              "returnValue": "2",
+              "displayValue": "2. 2 ימים",
+              "userExpectedAnswers": ["2", "two", "שתיים"]
+            },
+            {
+              "returnValue": "3",
+              "displayValue": "3. 3 ימים",
+              "userExpectedAnswers": ["3", "three", "שלוש"]
+            },
+            {
+              "returnValue": "4",
+              "displayValue": "4. 6 ימים",
+              "userExpectedAnswers": ["4", "four", "ארבע"]
+            }
+          ],
+          "BestAnswer": "3 ימים"
+        }
+      ],
+    "surveyTitle": "שאלות טריוויה ומשחקי חברה"
+    }
+  }
+
