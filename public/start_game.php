@@ -27,7 +27,7 @@ $group_questions = ($group_id) ? json_decode(file_get_contents("group_questions_
 function getUnansweredQuestions($pdo, $user_id, $questions, $category, $limit) {
     $unanswered = [];
     
-    foreach ($questions as $q) {
+    foreach ($questions["questionDefinition"]["questions"] as $q) {
         $stmt = $pdo->prepare("SELECT COUNT(*) FROM UserQuestions WHERE user_id = ? AND question_id = ? AND category = ?");
         $stmt->execute([$user_id, $q['id'], $category]);
         $already_answered = $stmt->fetchColumn();
@@ -60,9 +60,17 @@ $final_questions = array_merge($selected_general, $selected_team, $selected_depa
 // Store Selected Questions in Database
 foreach ($final_questions as $q) {
     $stmt = $pdo->prepare("INSERT INTO UserQuestions (user_id, question_id, category, answered) VALUES (?, ?, ?, FALSE)");
-    $stmt->execute([$user_id, $q['id'], $q['category']]);
+    $stmt->execute([$user_id, $q['id'], $q['question_theme']]);
 }
 
+// Format questions in the required JSON structure
+$formatted_questions = [
+    "questionDefinition" => [
+        "surveyTitle" => "שאלות טריוויה ומשחקי חברה",
+        "questions" => $final_questions
+    ]
+];
+
 // Output Questions
-echo json_encode(["status" => "success", "questions" => $final_questions]);
+echo json_encode(["status" => "success", "data" => $formatted_questions], JSON_UNESCAPED_UNICODE);
 ?>
