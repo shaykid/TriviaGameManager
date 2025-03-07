@@ -13,4 +13,3 @@ function startGame($pdo, $user_id, $group_id = null) {
     echo json_encode(["status" => "success", "questions" => $questions]);
 }
 ?>
-
