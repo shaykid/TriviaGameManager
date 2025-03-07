@@ -17,6 +17,12 @@ function startGame($pdo, $user_id, $group_id = null) {
 
     foreach ($questions as $q) {
         $options = json_decode($q['options'], true); // Assuming options are stored as JSON
+        
+        // Ensure options are structured correctly
+        if (!is_array($options)) {
+            $options = [];
+        }
+
         $formatted_question = [
             "id" => $q['question_id'],
             "type" => "SINGLE_CHOICE",
@@ -28,6 +34,13 @@ function startGame($pdo, $user_id, $group_id = null) {
         
         $formatted_questions["questionDefinition"]["questions"][] = $formatted_question;
     }
+
+    // Include metadata
+    $formatted_questions["metadata"] = [
+        "timestamp" => date("Y-m-d H:i:s"),
+        "user_id" => $user_id,
+        "group_id" => $group_id
+    ];
 
     echo json_encode(["status" => "success", "data" => $formatted_questions], JSON_UNESCAPED_UNICODE);
 }
