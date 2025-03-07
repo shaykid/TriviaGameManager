@@ -1,0 +1,11 @@
+# Start game and generate questions for user 1
+curl "http://yourserver.com/public/start_game.php?user_id=1&group_id=101"
+
+# Retrieve active sessions (example)
+curl "http://yourserver.com/public/script_manager.php?command=get_active_sessions"
+
+# Update score for user
+curl "http://yourserver.com/public/script_manager.php?command=update_score&user_id=1&correct_answers=4"
+
+# Check user's chat history
+curl "http://yourserver.com/public/script_manager.php?command=get_chat_history&user_id=1"
