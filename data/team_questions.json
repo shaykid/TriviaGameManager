@@ -1,4 +1,31 @@
-[
-    { "id": "TQ1", "question": "Who is the team leader?" },
-    { "id": "TQ2", "question": "What was the last team project?" }
-]
+{
+    "questionDefinition": {
+        "surveyTitle": "שאלות צוותיות",
+        "questions": [
+            {
+                "id": 101,
+                "type": "SINGLE_CHOICE",
+                "question": "מי מוביל את צוות הפיתוח?",
+                "question_theme": "צוות עבודה",
+                "options": [
+                    {
+                        "returnValue": "1",
+                        "displayValue": "1. מנהל הפרויקט",
+                        "userExpectedAnswers": ["1", "one", "אחד"]
+                    },
+                    {
+                        "returnValue": "2",
+                        "displayValue": "2. המתכנת המנוסה ביותר",
+                        "userExpectedAnswers": ["2", "two", "שתיים"]
+                    },
+                    {
+                        "returnValue": "3",
+                        "displayValue": "3. אף אחד, כולם שווים",
+                        "userExpectedAnswers": ["3", "three", "שלוש"]
+                    }
+                ],
+                "BestAnswer": "מנהל הפרויקט"
+            }
+        ]
+    }
+}
