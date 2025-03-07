@@ -1,5 +1,6 @@
 <?php
-$config = json_decode(file_get_contents(__DIR__ . '/db_connection.json'), true);
+// Database Connection
+$config = json_decode(file_get_contents(__DIR__ . "/db_connection.json"), true);
 
 try {
     $pdo = new PDO(
