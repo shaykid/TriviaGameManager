@@ -13,10 +13,10 @@ if ($user_id === 0) {
 }
 
 // Correct JSON loading with absolute paths
-$general_questions = json_decode(file_get_contents(__DIR__ . "/../resources/questions/general_questions.json"), true);
-$department_questions = json_decode(file_get_contents(__DIR__ . "/../resources/questions/department_questions.json"), true);
-$team_questions = json_decode(file_get_contents(__DIR__ . "/../resources/questions/team_questions.json"), true);
-$group_questions = ($group_id) ? json_decode(file_get_contents(__DIR__ . "/../resources/questions/group_questions_{$group_id}.json"), true) : [];
+$general_questions = json_decode(file_get_contents(__DIR__ . "/../data/general_questions.json"), true);
+$department_questions = json_decode(file_get_contents(__DIR__ . "/../data/department_questions.json"), true);
+$team_questions = json_decode(file_get_contents(__DIR__ . "/../data/team_questions.json"), true);
+$group_questions = ($group_id) ? json_decode(file_get_contents(__DIR__ . "/../data/group_questions_{$group_id}.json"), true) : [];
 
 // Function to Fetch Unanswered Questions
 function getUnansweredQuestions($pdo, $user_id, $questions, $category, $limit) {
