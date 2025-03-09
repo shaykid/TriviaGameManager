@@ -22,21 +22,21 @@ $session_id = ($row && $row['max_session'] !== null) ? $row['max_session'] + 2 :
 // Load JSON files (located in /data)
 $general_questions = json_decode(file_get_contents(__DIR__ . '/../data/general_questions.json'), true);
 $department_questions = json_decode(file_get_contents(__DIR__ . '/../data/department_questions.json'), true);
-$team_questions = json_decode(file_get_contents(__DIR__ . "/../data/team_questions.json"), true);
+$team_questions = json_decode(file_get_contents(__DIR__ . '/../data/team_questions.json'), true);
 $group_questions = ($group_id) ? json_decode(file_get_contents(__DIR__ . "/../data/group_questions_{$group_id}.json"), true) : [];
 
 /**
- * Filter out any questions that the user has already answered.
- * We consider a question "answered" if there is a record in UserQuestions
- * where answered <> 0.
+ * Returns all unanswered questions for a given set.
+ * A question is considered answered if there is a record in UserQuestions where
+ * category = $desiredCategory and answered <> 0.
  */
-function getAllUnansweredQuestions($pdo, $user_id, $questions, $category) {
+function getAllUnansweredQuestions($pdo, $user_id, $questions, $desiredCategory) {
     $unanswered = [];
     foreach ($questions["questionDefinition"]["questions"] as $q) {
         $stmt = $pdo->prepare("SELECT COUNT(*) FROM UserQuestions WHERE user_id = ? AND question_id = ? AND category = ? AND answered <> 0");
-        $stmt->execute([$user_id, $q['id'], $category]);
+        $stmt->execute([$user_id, $q['id'], $desiredCategory]);
         $count = $stmt->fetchColumn();
-        if (!$count) {  // if count is zero, question is unanswered
+        if (!$count) {
             $unanswered[] = $q;
         }
     }
@@ -44,32 +44,61 @@ function getAllUnansweredQuestions($pdo, $user_id, $questions, $category) {
 }
 
 /**
- * Randomly select one question from the filtered unanswered questions array.
+ * Randomly selects one question from the provided array and tags it with the desired category.
  */
-function selectOneRandom($questions) {
+function selectOneRandom($questions, $desiredCategory) {
     if (!empty($questions)) {
-        return [$questions[array_rand($questions)]];
+        $q = $questions[array_rand($questions)];
+        $q['selected_category'] = $desiredCategory;
+        return [$q];
     }
     return [];
 }
 
-// For department, team, and group sets: filter unanswered and select one random question (if available)
-$selected_department = selectOneRandom(getAllUnansweredQuestions($pdo, $user_id, $department_questions, "department"));
-$selected_team = selectOneRandom(getAllUnansweredQuestions($pdo, $user_id, $team_questions, "team"));
-$selected_group = [];
-if (!empty($group_questions)) {
-    $selected_group = selectOneRandom(getAllUnansweredQuestions($pdo, $user_id, $group_questions, "group"));
+/**
+ * Randomly selects $num questions from the provided array and tags them with the desired category.
+ */
+function selectRandomMultiple($questions, $num, $desiredCategory) {
+    $selected = [];
+    if (!empty($questions)) {
+        if (count($questions) > $num) {
+            $keys = array_rand($questions, $num);
+            if (!is_array($keys)) {
+                $keys = [$keys];
+            }
+            foreach ($keys as $key) {
+                $q = $questions[$key];
+                $q['selected_category'] = $desiredCategory;
+                $selected[] = $q;
+            }
+        } else {
+            foreach ($questions as $q) {
+                $q['selected_category'] = $desiredCategory;
+                $selected[] = $q;
+            }
+        }
+    }
+    return $selected;
 }
 
-// Count questions selected from these sets
+// ----- Selection for Department, Team, and Group -----
+// Filter unanswered questions for each set and select one random question if available.
+$selected_department = selectOneRandom(getAllUnansweredQuestions($pdo, $user_id, $department_questions, "department"), "department");
+$selected_team = selectOneRandom(getAllUnansweredQuestions($pdo, $user_id, $team_questions, "team"), "team");
+$selected_group = [];
+if (!empty($group_questions)) {
+    $selected_group = selectOneRandom(getAllUnansweredQuestions($pdo, $user_id, $group_questions, "group"), "group");
+}
+
+// Count the number of questions selected from non-general sets.
 $others_count = count($selected_department) + count($selected_team) + count($selected_group);
 
-// For general questions: filter unanswered and then randomly select as many as needed
+// ----- Selection for General Questions -----
+// Filter unanswered general questions.
 $general_unanswered = getAllUnansweredQuestions($pdo, $user_id, $general_questions, "general");
-
-// Calculate how many general questions are needed:
-// Total must be 5; if others are present, general questions = 5 - others_count.
-// If no other questions, select 5. Also enforce a minimum of 2 general questions when others exist.
+// Determine how many general questions are needed:
+// If no other questions, select 5 general questions.
+// Otherwise, select (5 - others_count) but enforce a minimum of 2.
 if ($others_count === 0) {
     $general_needed = 5;
 } else {
@@ -78,33 +107,20 @@ if ($others_count === 0) {
         $general_needed = 2;
     }
 }
+$selected_general = selectRandomMultiple($general_unanswered, $general_needed, "general");
 
-// Randomly select required number of general questions from the filtered array
-$selected_general = [];
-if (!empty($general_unanswered)) {
-    if (count($general_unanswered) > $general_needed) {
-        $keys = array_rand($general_unanswered, $general_needed);
-        if (!is_array($keys)) {
-            $keys = [$keys];
-        }
-        foreach ($keys as $key) {
-            $selected_general[] = $general_unanswered[$key];
-        }
-    } else {
-        $selected_general = $general_unanswered;
-    }
-}
-
-// Combine all selected questions into the final set
+// Combine all selected questions.
 $final_questions = array_merge($selected_department, $selected_team, $selected_group, $selected_general);
 
-// Insert each selected question into UserQuestions table (with answered = FALSE)
+// ----- Insertion into UserQuestions -----
+// Insert each selected question into UserQuestions with answered = 0 (not yet answered).
 foreach ($final_questions as $q) {
-    $stmt = $pdo->prepare("INSERT INTO UserQuestions (user_id, question_id, category, answered) VALUES (?, ?, ?, FALSE)");
-    $stmt->execute([$user_id, $q['id'], $q['question_theme']]);
+    // Use the explicitly tagged category.
+    $stmt = $pdo->prepare("INSERT INTO UserQuestions (user_id, question_id, category, answered) VALUES (?, ?, ?, 0)");
+    $stmt->execute([$user_id, $q['id'], $q['selected_category']]);
 }
 
-// Prepare the JSON structure for the session
+// ----- Prepare Session Data -----
 $formatted_questions = [
     "state" => [
         "step" => "start",
