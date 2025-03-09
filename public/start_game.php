@@ -1,7 +1,7 @@
 <?php
 require __DIR__ . '/../config/db_connection.php';
 
-// Retrieve parameters safely from GET
+// Retrieve parameters safely
 $user_id = isset($_GET['user_id']) ? intval($_GET['user_id']) : 0;
 $group_id = isset($_GET['group_id']) ? intval($_GET['group_id']) : null;
 $chat_id = isset($_GET['chat_id']) ? $_GET['chat_id'] : "chat_id_placeholder";
@@ -24,23 +24,26 @@ $department_questions = json_decode(file_get_contents(__DIR__ . '/../data/depart
 $team_questions = json_decode(file_get_contents(__DIR__ . "/../data/team_questions.json"), true);
 $group_questions = ($group_id) ? json_decode(file_get_contents(__DIR__ . "/../data/group_questions_{$group_id}.json"), true) : [];
 
-// Function to Fetch Unanswered Questions
+// Function to Fetch Unanswered Questions – updated to only count questions answered (answered = TRUE)
 function getUnansweredQuestions($pdo, $user_id, $questions, $category, $limit) {
     $unanswered = [];
+
     foreach ($questions["questionDefinition"]["questions"] as $q) {
-        $stmt = $pdo->prepare("SELECT COUNT(*) FROM UserQuestions WHERE user_id = ? AND question_id = ? AND category = ?");
+        $stmt = $pdo->prepare("SELECT COUNT(*) FROM UserQuestions WHERE user_id = ? AND question_id = ? AND category = ? AND answered = TRUE");
         $stmt->execute([$user_id, $q['id'], $category]);
         $already_answered = $stmt->fetchColumn();
-        if (!$already_answered) {  // No record means unanswered.
+
+        if (!$already_answered) {
             $unanswered[] = $q;
         }
+
         if (count($unanswered) >= $limit) break;
     }
+
     return $unanswered;
 }
 
-
-// Select questions
+// Selecting Questions
 $selected_general = getUnansweredQuestions($pdo, $user_id, $general_questions, "general", 3);
 $selected_team = getUnansweredQuestions($pdo, $user_id, $team_questions, "team", 1);
 $selected_department = getUnansweredQuestions($pdo, $user_id, $department_questions, "department", 1);
@@ -49,13 +52,13 @@ $selected_group = ($group_questions) ? getUnansweredQuestions($pdo, $user_id, $g
 // Combine Selected Questions
 $final_questions = array_merge($selected_general, $selected_team, $selected_department, $selected_group);
 
-// Store Selected Questions in UserQuestions table
+// Store Selected Questions in UserQuestions (this inserts a record; if the record exists already, you'll need to handle duplicates accordingly)
 foreach ($final_questions as $q) {
     $stmt = $pdo->prepare("INSERT INTO UserQuestions (user_id, question_id, category, answered) VALUES (?, ?, ?, FALSE)");
     $stmt->execute([$user_id, $q['id'], $q['question_theme']]);
 }
 
-// Prepare JSON structure to be stored
+// Prepare JSON structure
 $formatted_questions = [
     "state" => [
         "step" => "start",
@@ -69,7 +72,7 @@ $formatted_questions = [
     ]
 ];
 
-// Insert or update session data in AllSessions table, including action_script_id
+// Insert Session Data to AllSessions Table (including action_script_id)
 $stmt = $pdo->prepare("
     INSERT INTO AllSessions (session_id, action_script_id, chat_id, contact_id, data_json)
     VALUES (?, ?, ?, ?, ?)
