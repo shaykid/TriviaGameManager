@@ -127,10 +127,10 @@ $selected_general = selectRandomMultiple($general_unanswered, $general_needed, "
 $final_questions = array_merge($selected_department, $selected_team, $selected_group, $selected_general);
 
 // ---- Insert Selected Questions into UserQuestions ----
-// This ensures that a question already presented won't be selected again.
+// Now, for each selected question, we also include the current session_id.
 foreach ($final_questions as $q) {
-    $stmt = $pdo->prepare("INSERT INTO UserQuestions (user_id, question_id, category, answered) VALUES (?, ?, ?, 0)");
-    $stmt->execute([$user_id, $q['id'], $q['selected_category']]);
+    $stmt = $pdo->prepare("INSERT INTO UserQuestions (user_id, session_id, question_id, category, answered) VALUES (?, ?, ?, ?, 0)");
+    $stmt->execute([$user_id, $session_id, $q['id'], $q['selected_category']]);
 }
 
 // ---- Prepare the Session JSON Structure ----
