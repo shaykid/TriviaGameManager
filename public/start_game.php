@@ -25,12 +25,12 @@ $department_questions = json_decode(file_get_contents(__DIR__ . '/../data/depart
 $team_questions = json_decode(file_get_contents(__DIR__ . "/../data/team_questions.json"), true);
 $group_questions = ($group_id) ? json_decode(file_get_contents(__DIR__ . "/../data/group_questions_{$group_id}.json"), true) : [];
 
-// Function to retrieve all unanswered questions for a given category
+// Updated function: returns all unanswered questions based on UserQuestions
 function getAllUnansweredQuestions($pdo, $user_id, $questions, $category) {
     $unanswered = [];
     foreach ($questions["questionDefinition"]["questions"] as $q) {
-        // Only count as answered if answered = TRUE
-        $stmt = $pdo->prepare("SELECT COUNT(*) FROM UserQuestions WHERE user_id = ? AND question_id = ? AND category = ? AND answered = TRUE");
+        // Count the question as answered if there's a record where answered <> 0
+        $stmt = $pdo->prepare("SELECT COUNT(*) FROM UserQuestions WHERE user_id = ? AND question_id = ? AND category = ? AND answered <> 0");
         $stmt->execute([$user_id, $q['id'], $category]);
         $already_answered = $stmt->fetchColumn();
         if (!$already_answered) {
@@ -40,7 +40,7 @@ function getAllUnansweredQuestions($pdo, $user_id, $questions, $category) {
     return $unanswered;
 }
 
-// Select one random unanswered question from each of department, team, and group (if available)
+// For department, team, and group sets: select one random unanswered question (if available)
 $selected_department = [];
 $dept_unanswered = getAllUnansweredQuestions($pdo, $user_id, $department_questions, "department");
 if (!empty($dept_unanswered)) {
@@ -61,17 +61,15 @@ if (!empty($group_questions)) {
     }
 }
 
-// Count the number of questions selected from other sets
+// Count how many questions we got from other sets
 $others_count = count($selected_department) + count($selected_team) + count($selected_group);
 
-// Determine how many general questions to select
-// Total must be 5; if others are present, general questions = 5 - others_count
-// If no other questions, general_questions count = 5.
+// Determine how many general questions are needed
 $general_needed = 5 - $others_count;
 if ($others_count === 0) {
     $general_needed = 5;
 } elseif ($general_needed < 2) {
-    // Enforce a minimum of 2 general questions if any others were selected
+    // Ensure at least 2 general questions if any others were selected
     $general_needed = 2;
 }
 
@@ -81,7 +79,6 @@ $selected_general = [];
 if (!empty($general_unanswered)) {
     if (count($general_unanswered) > $general_needed) {
         $keys = array_rand($general_unanswered, $general_needed);
-        // If array_rand returns a single key, convert it to an array
         if (!is_array($keys)) {
             $keys = [$keys];
         }
@@ -89,22 +86,21 @@ if (!empty($general_unanswered)) {
             $selected_general[] = $general_unanswered[$key];
         }
     } else {
-        // If there are fewer than needed, take them all
         $selected_general = $general_unanswered;
     }
 }
 
-// Combine all selected questions into final set
+// Combine all selected questions
 $final_questions = array_merge($selected_department, $selected_team, $selected_group, $selected_general);
 
-// Store selected questions in UserQuestions table (with answered = FALSE)
-// Note: To avoid duplicates, you might want to check if a record already exists. For simplicity, we insert.
+// Insert each selected question into UserQuestions (with answered = FALSE)
+// (Optionally, you can check for duplicates before inserting)
 foreach ($final_questions as $q) {
     $stmt = $pdo->prepare("INSERT INTO UserQuestions (user_id, question_id, category, answered) VALUES (?, ?, ?, FALSE)");
     $stmt->execute([$user_id, $q['id'], $q['question_theme']]);
 }
 
-// Prepare JSON structure for the session
+// Prepare the session JSON structure
 $formatted_questions = [
     "state" => [
         "step" => "start",
@@ -118,7 +114,7 @@ $formatted_questions = [
     ]
 ];
 
-// Insert or update session data in AllSessions (including action_script_id)
+// Insert or update the session data in AllSessions (including action_script_id)
 $stmt = $pdo->prepare("
     INSERT INTO AllSessions (session_id, action_script_id, chat_id, contact_id, data_json)
     VALUES (?, ?, ?, ?, ?)
