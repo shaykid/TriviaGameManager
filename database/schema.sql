@@ -1,6 +1,7 @@
 CREATE TABLE Users (
     user_id INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(255) NOT NULL,
+    phone_number VARCHAR(20) UNIQUE, -- Added phone number field
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
