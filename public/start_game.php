@@ -12,11 +12,11 @@ if ($user_id === 0) {
     die(json_encode(["status" => "error", "message" => "Invalid user ID"]));
 }
 
-// Load Questions from JSON Files
-$general_questions = json_decode(file_get_contents(__DIR__ . '/../resources/questions/general_questions.json'), true);
-$department_questions = json_decode(file_get_contents(__DIR__ . '/../resources/questions/department_questions.json'), true);
-$team_questions = json_decode(file_get_contents(__DIR__ . '/../resources/questions/team_questions.json'), true);
-$group_questions = ($group_id) ? json_decode(file_get_contents(__DIR__ . "/../resources/questions/group_{$group_id}_questions.json"), true) : [];
+// Correct JSON loading with absolute paths
+$general_questions = json_decode(file_get_contents(__DIR__ . "/../resources/questions/general_questions.json"), true);
+$department_questions = json_decode(file_get_contents(__DIR__ . "/../resources/questions/department_questions.json"), true);
+$team_questions = json_decode(file_get_contents(__DIR__ . "/../resources/questions/team_questions.json"), true);
+$group_questions = ($group_id) ? json_decode(file_get_contents(__DIR__ . "/../resources/questions/group_questions_{$group_id}.json"), true) : [];
 
 // Function to Fetch Unanswered Questions
 function getUnansweredQuestions($pdo, $user_id, $questions, $category, $limit) {
