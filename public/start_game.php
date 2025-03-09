@@ -35,16 +35,21 @@ function getAllUnansweredQuestions($pdo, $user_id, $questions, $fixedCategory) {
     foreach ($questions["questionDefinition"]["questions"] as $q) {
         $stmt = $pdo->prepare("SELECT answered FROM UserQuestions WHERE user_id = ? AND question_id = ? AND category = ?");
         $stmt->execute([$user_id, $q['id'], $fixedCategory]);
-        $row = $stmt->fetch(PDO::FETCH_ASSOC);
-        // Include the question if:
-        // - No record exists (i.e. not presented before), OR
-        // - A record exists with answered == 0 (i.e. presented but not answered)
-        if (!$row || $row['answered'] == 0) {
+        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $isUnanswered = true;
+        foreach ($rows as $row) {
+            if ($row['answered'] != 0) { // If any record is answered (non-zero), mark as answered.
+                $isUnanswered = false;
+                break;
+            }
+        }
+        if ($isUnanswered) {
             $unanswered[] = $q;
         }
     }
     return $unanswered;
 }
+
 
 /**
  * Randomly select one question from the provided array and tag it with the fixed category.
