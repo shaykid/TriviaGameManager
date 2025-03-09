@@ -8,7 +8,7 @@ CREATE TABLE UserScores (
     user_id INT PRIMARY KEY,
     total_score FLOAT DEFAULT 0,
     last_updated TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    FOREIGN KEY (user_id) REFERENCES Users(user_id)
+    FOREIGN KEY (user_id) REFERENCES Users(user_id) ON DELETE CASCADE
 );
 
 CREATE TABLE UserQuestions (
@@ -16,7 +16,9 @@ CREATE TABLE UserQuestions (
     question_id VARCHAR(255),
     category VARCHAR(50),
     answered BOOLEAN DEFAULT FALSE,
-    PRIMARY KEY (user_id, question_id)
+    PRIMARY KEY (user_id, question_id),
+    FOREIGN KEY (user_id) REFERENCES Users(user_id) ON DELETE CASCADE,
+    FOREIGN KEY (question_id) REFERENCES Questions(question_id) ON DELETE CASCADE
 );
 
 CREATE TABLE Questions (
@@ -27,9 +29,18 @@ CREATE TABLE Questions (
 );
 
 CREATE TABLE ChatLogs (
-    chat_id INT,
+    chat_id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT,
     session_id INT,
     message_text TEXT,
-    timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES Users(user_id) ON DELETE CASCADE
+);
+
+CREATE TABLE QrScans (
+    qr_scan_id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT,
+    qr_id VARCHAR(255),
+    timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES Users(user_id) ON DELETE CASCADE
 );
