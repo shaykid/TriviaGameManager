@@ -9,10 +9,15 @@ if (empty($contact_id)) {
 $chat_id = isset($_GET['chat_id']) ? $_GET['chat_id'] : "chat_id_placeholder";
 $group_id = isset($_GET['group_id']) ? intval($_GET['group_id']) : null;
 $action_script_id = isset($_GET['action_script_id']) ? intval($_GET['action_script_id']) : 0;
-$previousSessionID = isset($_GET['previousSessionID']) ? $_GET['previousSessionID'] : null;
 
 // Use contact_id as the user identifier
 $user_id = $contact_id;
+
+// Determine the new session_id: add 2 to the last session_id for this chat/contact
+$stmt = $pdo->prepare("SELECT MAX(session_id) as max_session FROM AllSessions WHERE chat_id = ? AND contact_id = ?");
+$stmt->execute([$chat_id, $contact_id]);
+$row = $stmt->fetch(PDO::FETCH_ASSOC);
+$session_id = ($row && $row['max_session'] !== null) ? $row['max_session'] + 2 : 4000;
 
 // Load JSON files (located in /data)
 $general_questions = json_decode(file_get_contents(__DIR__ . '/../data/general_questions.json'), true);
@@ -22,8 +27,8 @@ $group_questions = ($group_id) ? json_decode(file_get_contents(__DIR__ . "/../da
 
 /**
  * Returns all unanswered questions for a given set.
- * A question is considered unanswered if either no record exists in UserQuestions for that user,
- * question ID, and fixed category, or if a record exists with answered == 0.
+ * A question is considered "used" if a record exists in UserQuestions for that user, question ID,
+ * and fixed category (regardless of the answered value).
  */
 function getAllUnansweredQuestions($pdo, $user_id, $questions, $fixedCategory) {
     $unanswered = [];
@@ -32,13 +37,19 @@ function getAllUnansweredQuestions($pdo, $user_id, $questions, $fixedCategory) {
         $stmt->execute([$user_id, $q['id'], $fixedCategory]);
         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
         
+        // Assume unanswered initially
         $isUnanswered = true;
+        
+        // Iterate over all records for this question
         foreach ($rows as $row) {
-            if ($row['answered'] != 0) { // if any record has a nonzero answered value, question is answered.
+            if ($row['answered'] != 0) {
+                // As soon as we find a record with answered not equal to 0, mark as answered and break out
                 $isUnanswered = false;
                 break;
             }
         }
+        
+        // If no record is answered, consider the question unanswered
         if ($isUnanswered) {
             $unanswered[] = $q;
         }
@@ -52,6 +63,7 @@ function getAllUnansweredQuestions($pdo, $user_id, $questions, $fixedCategory) {
 function selectOneRandom($questions, $fixedCategory) {
     if (!empty($questions)) {
         $q = $questions[array_rand($questions)];
+        // Override any JSON category with the fixed value
         $q['selected_category'] = $fixedCategory;
         return [$q];
     }
@@ -92,6 +104,8 @@ $selected_group = [];
 if (!empty($group_questions)) {
     $selected_group = selectOneRandom(getAllUnansweredQuestions($pdo, $user_id, $group_questions, "group"), "group");
 }
+
+// Count how many questions are selected from these non-general sets.
 $others_count = count($selected_department) + count($selected_team) + count($selected_group);
 
 // ---- For General Questions ----
@@ -112,37 +126,15 @@ $selected_general = selectRandomMultiple($general_unanswered, $general_needed, "
 // ---- Combine All Selected Questions ----
 $final_questions = array_merge($selected_department, $selected_team, $selected_group, $selected_general);
 
-// ---- Create a New Session Record Using Auto-Increment ----
-// Insert a temporary record into AllSessions; session_id will be auto-incremented.
-$initial_data_json = json_encode(["state" => []]); // temporary placeholder
-$stmt = $pdo->prepare("INSERT INTO AllSessions (action_script_id, chat_id, contact_id, data_json) VALUES (?, ?, ?, ?)");
-$stmt->execute([$action_script_id, $chat_id, $contact_id, $initial_data_json]);
-$session_id = $pdo->lastInsertId();
-
-// ---- Update the Session JSON Structure with session_id and previousSessionID ----
-$formatted_questions = [
-    "state" => [
-        "step" => "start",
-        "session_id" => $session_id,
-        "previousSessionID" => $previousSessionID,
-        "scriptAnswers" => new stdClass(),
-        "currentQuestion" => 0
-    ],
-    "questionDefinition" => [
-        "surveyTitle" => "שאלות טריוויה ומשחקי חברה",
-        "questions" => $final_questions
-    ]
-];
-
-// Update the AllSessions record with the full session data
-$stmt = $pdo->prepare("UPDATE AllSessions SET data_json = ? WHERE session_id = ?");
-$stmt->execute([json_encode($formatted_questions, JSON_UNESCAPED_UNICODE), $session_id]);
-
-// ---- Insert Selected Questions into UserQuestions with session_id and correct answer ----
+// ---- Insert Selected Questions into UserQuestions ----
+// Now, for each selected question, we also determine the correct answer by matching
+// the BestAnswer text with the displayValue of each option.
 foreach ($final_questions as $q) {
     $correct_option = null;
     if (isset($q['BestAnswer']) && isset($q['options']) && is_array($q['options'])) {
+        // Loop through each option to find the one matching the BestAnswer.
         foreach ($q['options'] as $option) {
+            // If the BestAnswer string is found in the displayValue, we choose that option.
             if (strpos($option['displayValue'], $q['BestAnswer']) !== false) {
                 $correct_option = $option['returnValue'];
                 break;
@@ -152,5 +144,34 @@ foreach ($final_questions as $q) {
     $stmt = $pdo->prepare("INSERT INTO UserQuestions (user_id, session_id, question_id, category, answered, correct_answer) VALUES (?, ?, ?, ?, 0, ?)");
     $stmt->execute([$user_id, $session_id, $q['id'], $q['selected_category'], $correct_option]);
 }
+
+
+// ---- Prepare the Session JSON Structure ----
+$formatted_questions = [
+    "state" => [
+        "step" => "start",
+        "session_id" => $session_id,
+        "scriptAnswers" => new stdClass(),
+        "currentQuestion" => 0
+    ],
+    "questionDefinition" => [
+        "surveyTitle" => "שאלות טריוויה ומשחקי חברה",
+        "questions" => $final_questions
+    ]
+];
+
+// ---- Insert or Update Session Data in AllSessions (including action_script_id) ----
+$stmt = $pdo->prepare("
+    INSERT INTO AllSessions (session_id, action_script_id, chat_id, contact_id, data_json)
+    VALUES (?, ?, ?, ?, ?)
+    ON DUPLICATE KEY UPDATE data_json = VALUES(data_json), last_update_time = CURRENT_TIMESTAMP
+");
+$stmt->execute([
+    $session_id,
+    $action_script_id,
+    $chat_id,
+    $contact_id,
+    json_encode($formatted_questions, JSON_UNESCAPED_UNICODE)
+]);
 
 echo json_encode(["status" => "success", "data" => $formatted_questions], JSON_UNESCAPED_UNICODE);
