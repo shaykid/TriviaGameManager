@@ -27,16 +27,17 @@ $group_questions = ($group_id) ? json_decode(file_get_contents(__DIR__ . "/../da
 
 /**
  * Returns all unanswered questions for a given set.
- * A question is considered answered if there is a record in UserQuestions where
- * category = $desiredCategory and answered <> 0.
+ * A question is considered "used" if a record exists in UserQuestions for that user, question ID,
+ * and fixed category (regardless of the answered value).
  */
-function getAllUnansweredQuestions($pdo, $user_id, $questions, $desiredCategory) {
+function getAllUnansweredQuestions($pdo, $user_id, $questions, $fixedCategory) {
     $unanswered = [];
     foreach ($questions["questionDefinition"]["questions"] as $q) {
-        $stmt = $pdo->prepare("SELECT COUNT(*) FROM UserQuestions WHERE user_id = ? AND question_id = ? AND category = ? AND answered <> 0");
-        $stmt->execute([$user_id, $q['id'], $desiredCategory]);
+        // Use the fixed category string for checking
+        $stmt = $pdo->prepare("SELECT COUNT(*) FROM UserQuestions WHERE user_id = ? AND question_id = ? AND category = ?");
+        $stmt->execute([$user_id, $q['id'], $fixedCategory]);
         $count = $stmt->fetchColumn();
-        if (!$count) {
+        if ($count == 0) {
             $unanswered[] = $q;
         }
     }
@@ -44,21 +45,22 @@ function getAllUnansweredQuestions($pdo, $user_id, $questions, $desiredCategory)
 }
 
 /**
- * Randomly selects one question from the provided array and tags it with the desired category.
+ * Randomly select one question from the provided array and tag it with the fixed category.
  */
-function selectOneRandom($questions, $desiredCategory) {
+function selectOneRandom($questions, $fixedCategory) {
     if (!empty($questions)) {
         $q = $questions[array_rand($questions)];
-        $q['selected_category'] = $desiredCategory;
+        // Override any JSON category with the fixed value
+        $q['selected_category'] = $fixedCategory;
         return [$q];
     }
     return [];
 }
 
 /**
- * Randomly selects $num questions from the provided array and tags them with the desired category.
+ * Randomly select $num questions from the provided array and tag each with the fixed category.
  */
-function selectRandomMultiple($questions, $num, $desiredCategory) {
+function selectRandomMultiple($questions, $num, $fixedCategory) {
     $selected = [];
     if (!empty($questions)) {
         if (count($questions) > $num) {
@@ -68,12 +70,12 @@ function selectRandomMultiple($questions, $num, $desiredCategory) {
             }
             foreach ($keys as $key) {
                 $q = $questions[$key];
-                $q['selected_category'] = $desiredCategory;
+                $q['selected_category'] = $fixedCategory;
                 $selected[] = $q;
             }
         } else {
             foreach ($questions as $q) {
-                $q['selected_category'] = $desiredCategory;
+                $q['selected_category'] = $fixedCategory;
                 $selected[] = $q;
             }
         }
@@ -81,8 +83,8 @@ function selectRandomMultiple($questions, $num, $desiredCategory) {
     return $selected;
 }
 
-// ----- Selection for Department, Team, and Group -----
-// Filter unanswered questions for each set and select one random question if available.
+// ---- For Department, Team, and Group Questions ----
+// Filter unanswered questions and select one random question from each set (if available).
 $selected_department = selectOneRandom(getAllUnansweredQuestions($pdo, $user_id, $department_questions, "department"), "department");
 $selected_team = selectOneRandom(getAllUnansweredQuestions($pdo, $user_id, $team_questions, "team"), "team");
 $selected_group = [];
@@ -90,15 +92,14 @@ if (!empty($group_questions)) {
     $selected_group = selectOneRandom(getAllUnansweredQuestions($pdo, $user_id, $group_questions, "group"), "group");
 }
 
-// Count the number of questions selected from non-general sets.
+// Count how many questions are selected from these non-general sets.
 $others_count = count($selected_department) + count($selected_team) + count($selected_group);
 
-// ----- Selection for General Questions -----
+// ---- For General Questions ----
 // Filter unanswered general questions.
 $general_unanswered = getAllUnansweredQuestions($pdo, $user_id, $general_questions, "general");
-// Determine how many general questions are needed:
-// If no other questions, select 5 general questions.
-// Otherwise, select (5 - others_count) but enforce a minimum of 2.
+// Determine how many general questions are needed.
+// If no other questions, select 5; otherwise, select (5 - others_count) with a minimum of 2.
 if ($others_count === 0) {
     $general_needed = 5;
 } else {
@@ -109,18 +110,17 @@ if ($others_count === 0) {
 }
 $selected_general = selectRandomMultiple($general_unanswered, $general_needed, "general");
 
-// Combine all selected questions.
+// ---- Combine All Selected Questions ----
 $final_questions = array_merge($selected_department, $selected_team, $selected_group, $selected_general);
 
-// ----- Insertion into UserQuestions -----
-// Insert each selected question into UserQuestions with answered = 0 (not yet answered).
+// ---- Insert Selected Questions into UserQuestions ----
+// This ensures that a question already presented won't be selected again.
 foreach ($final_questions as $q) {
-    // Use the explicitly tagged category.
     $stmt = $pdo->prepare("INSERT INTO UserQuestions (user_id, question_id, category, answered) VALUES (?, ?, ?, 0)");
     $stmt->execute([$user_id, $q['id'], $q['selected_category']]);
 }
 
-// ----- Prepare Session Data -----
+// ---- Prepare the Session JSON Structure ----
 $formatted_questions = [
     "state" => [
         "step" => "start",
@@ -134,7 +134,7 @@ $formatted_questions = [
     ]
 ];
 
-// Insert or update session data in AllSessions (including action_script_id)
+// ---- Insert or Update Session Data in AllSessions (including action_script_id) ----
 $stmt = $pdo->prepare("
     INSERT INTO AllSessions (session_id, action_script_id, chat_id, contact_id, data_json)
     VALUES (?, ?, ?, ?, ?)
