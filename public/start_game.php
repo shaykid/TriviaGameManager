@@ -127,10 +127,12 @@ $selected_general = selectRandomMultiple($general_unanswered, $general_needed, "
 $final_questions = array_merge($selected_department, $selected_team, $selected_group, $selected_general);
 
 // ---- Insert Selected Questions into UserQuestions ----
-// Now, for each selected question, we also include the current session_id.
+// Now, for each selected question, include the current session_id and correct answer.
 foreach ($final_questions as $q) {
-    $stmt = $pdo->prepare("INSERT INTO UserQuestions (user_id, session_id, question_id, category, answered) VALUES (?, ?, ?, ?, 0)");
-    $stmt->execute([$user_id, $session_id, $q['id'], $q['selected_category']]);
+    // Get the correct answer from the JSON if it exists
+    $bestAnswer = isset($q['BestAnswer']) ? $q['BestAnswer'] : null;
+    $stmt = $pdo->prepare("INSERT INTO UserQuestions (user_id, session_id, question_id, category, answered, correct_answer) VALUES (?, ?, ?, ?, 0, ?)");
+    $stmt->execute([$user_id, $session_id, $q['id'], $q['selected_category'], $bestAnswer]);
 }
 
 // ---- Prepare the Session JSON Structure ----
