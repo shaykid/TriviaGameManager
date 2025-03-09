@@ -127,13 +127,24 @@ $selected_general = selectRandomMultiple($general_unanswered, $general_needed, "
 $final_questions = array_merge($selected_department, $selected_team, $selected_group, $selected_general);
 
 // ---- Insert Selected Questions into UserQuestions ----
-// Now, for each selected question, include the current session_id and correct answer.
+// Now, for each selected question, we also determine the correct answer by matching
+// the BestAnswer text with the displayValue of each option.
 foreach ($final_questions as $q) {
-    // Get the correct answer from the JSON if it exists
-    $bestAnswer = isset($q['BestAnswer']) ? $q['BestAnswer'] : null;
+    $correct_option = null;
+    if (isset($q['BestAnswer']) && isset($q['options']) && is_array($q['options'])) {
+        // Loop through each option to find the one matching the BestAnswer.
+        foreach ($q['options'] as $option) {
+            // If the BestAnswer string is found in the displayValue, we choose that option.
+            if (strpos($option['displayValue'], $q['BestAnswer']) !== false) {
+                $correct_option = $option['returnValue'];
+                break;
+            }
+        }
+    }
     $stmt = $pdo->prepare("INSERT INTO UserQuestions (user_id, session_id, question_id, category, answered, correct_answer) VALUES (?, ?, ?, ?, 0, ?)");
-    $stmt->execute([$user_id, $session_id, $q['id'], $q['selected_category'], $bestAnswer]);
+    $stmt->execute([$user_id, $session_id, $q['id'], $q['selected_category'], $correct_option]);
 }
+
 
 // ---- Prepare the Session JSON Structure ----
 $formatted_questions = [
