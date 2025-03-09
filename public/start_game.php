@@ -31,13 +31,14 @@ function getUnansweredQuestions($pdo, $user_id, $questions, $category, $limit) {
         $stmt = $pdo->prepare("SELECT COUNT(*) FROM UserQuestions WHERE user_id = ? AND question_id = ? AND category = ?");
         $stmt->execute([$user_id, $q['id'], $category]);
         $already_answered = $stmt->fetchColumn();
-        if (!$already_answered) {
+        if (!$already_answered) {  // No record means unanswered.
             $unanswered[] = $q;
         }
         if (count($unanswered) >= $limit) break;
     }
     return $unanswered;
 }
+
 
 // Select questions
 $selected_general = getUnansweredQuestions($pdo, $user_id, $general_questions, "general", 3);
