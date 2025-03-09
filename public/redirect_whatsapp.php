@@ -6,7 +6,7 @@ $id = isset($_GET['ID']) ? $_GET['ID'] : '1000001';
 
 // Prepare WhatsApp URL
 $encodedMessage = urlencode($msgtext . " " . $id);
-$whatsappURL = "https://wa.me/{$wappnum}?text={$encodedMessage}";
+$whatsappURL = "https://wa.me/{$wappnum}?text=🪴 {$encodedMessage} 🪴";
 
 // Redirect user to WhatsApp
 header("Location: $whatsappURL");
