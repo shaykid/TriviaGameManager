@@ -30,7 +30,7 @@ function getAllUnansweredQuestions($pdo, $user_id, $questions, $category) {
     $unanswered = [];
     foreach ($questions["questionDefinition"]["questions"] as $q) {
         // Count the question as answered if there's a record where answered <> 0
-        $stmt = $pdo->prepare("SELECT COUNT(*) FROM UserQuestions WHERE user_id = ? AND question_id = ? AND category = ? AND answered <> 0");
+        $stmt = $pdo->prepare("SELECT COUNT(*) FROM UserQuestions WHERE user_id = ? AND question_id = ? AND category = ? AND answered = 0");
         $stmt->execute([$user_id, $q['id'], $category]);
         $already_answered = $stmt->fetchColumn();
         if (!$already_answered) {
