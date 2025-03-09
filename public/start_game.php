@@ -4,6 +4,8 @@ require __DIR__ . '/../config/db_connection.php';
 // Retrieve parameters safely
 $user_id = isset($_GET['user_id']) ? intval($_GET['user_id']) : 0;
 $group_id = isset($_GET['group_id']) ? intval($_GET['group_id']) : null;
+$chat_id = isset($_GET['chat_id']) ? $_GET['chat_id'] : "chat_id_placeholder";
+$contact_id = isset($_GET['contact_id']) ? $_GET['contact_id'] : "contact_id_placeholder";
 
 if ($user_id === 0) {
     die(json_encode(["status" => "error", "message" => "Invalid user ID"]));
@@ -18,19 +20,15 @@ $group_questions = ($group_id) ? json_decode(file_get_contents(__DIR__ . "/../da
 // Corrected Function to Fetch Unanswered Questions
 function getUnansweredQuestions($pdo, $user_id, $questions, $category, $limit) {
     $unanswered = [];
-
     foreach ($questions["questionDefinition"]["questions"] as $q) {
         $stmt = $pdo->prepare("SELECT COUNT(*) FROM UserQuestions WHERE user_id = ? AND question_id = ? AND category = ?");
         $stmt->execute([$user_id, $q['id'], $category]);
         $already_answered = $stmt->fetchColumn();
-
         if (!$already_answered) {
             $unanswered[] = $q;
         }
-
         if (count($unanswered) >= $limit) break;
     }
-
     return $unanswered;
 }
 
@@ -69,9 +67,6 @@ $stmt = $pdo->prepare("
     VALUES (?, ?, ?, ?)
     ON DUPLICATE KEY UPDATE data_json = VALUES(data_json), last_update_time = CURRENT_TIMESTAMP
 ");
-
-$chat_id = "chat_id_placeholder"; // replace accordingly
-$contact_id = "contact_id_placeholder"; // replace accordingly
 
 $stmt->execute([
     $user_id, 
