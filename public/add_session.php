@@ -15,5 +15,18 @@ $stmt = $pdo->prepare("INSERT INTO AllSessions (action_script_id, chat_id, conta
 $stmt->execute([$action_script_id, $chat_id, $contact_id]);
 $session_id = $pdo->lastInsertId();
 
-// Return the new session_id in a JSON response
-echo json_encode(["status" => "success", "session_id" => $session_id], JSON_UNESCAPED_UNICODE);
+// Create the JSON structure for data_json
+$data_json = json_encode([
+    "state" => [
+        "step" => "start",
+        "session_id" => $session_id,
+        "scriptAnswers" => new stdClass()
+    ]
+], JSON_UNESCAPED_UNICODE);
+
+// Update the AllSessions record with the new data_json
+$stmt = $pdo->prepare("UPDATE AllSessions SET data_json = ? WHERE session_id = ?");
+$stmt->execute([$data_json, $session_id]);
+
+// Return the new session_id and data_json in a JSON response
+echo json_encode(["status" => "success", "session_id" => $session_id, "data_json" => json_decode($data_json)], JSON_UNESCAPED_UNICODE);
