@@ -1,5 +1,4 @@
 <?php
-// Database Connection
 $config = json_decode(file_get_contents(__DIR__ . "/db_connection.json"), true);
 
 try {
@@ -9,9 +8,10 @@ try {
         $config['password']
     );
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    echo json_encode(["status" => "ok"]);
 } catch (PDOException $e) {
-    die(json_encode([
-        "status" => "error", 
+    echo json_encode([
+        "status" => "error",
         "message" => "Database connection failed: " . $e->getMessage()
-    ]));
+    ]);
 }
