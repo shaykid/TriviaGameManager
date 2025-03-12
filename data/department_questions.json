@@ -5,26 +5,26 @@
             {
                 "id": 201,
                 "type": "SINGLE_CHOICE",
-                "question": "מהו היעד המרכזי של המחלקה?",
+                "question": "מי חברת הקנאביס היחידה בעולם שעושה משחק טריוויה לפורים?",
                 "question_theme": "מחלקה",
                 "options": [
                     {
                         "returnValue": "1",
-                        "displayValue": "1. לייצר רווח",
+                        "displayValue": "1. אורורה",
                         "userExpectedAnswers": ["1", "one", "אחד"]
                     },
                     {
                         "returnValue": "2",
-                        "displayValue": "2. לספק שירות איכותי",
+                        "displayValue": "2. שיח מדיקל",
                         "userExpectedAnswers": ["2", "two", "שתיים"]
                     },
                     {
                         "returnValue": "3",
-                        "displayValue": "3. להביא חדשנות",
+                        "displayValue": "3. אסקובר הובלות",
                         "userExpectedAnswers": ["3", "three", "שלוש"]
                     }
                 ],
-                "BestAnswer": "לספק שירות איכותי"
+                "BestAnswer": "שיח מדיקל"
             }
         ]
     }
