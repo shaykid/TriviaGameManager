@@ -5,26 +5,26 @@
             {
                 "id": 401,
                 "type": "SINGLE_CHOICE",
-                "question": "מי מוביל את צוות הפיתוח?",
+                "question": "מי העובד הכי וותיק בשיח?",
                 "question_theme": "צוות עבודה",
                 "options": [
                     {
                         "returnValue": "1",
-                        "displayValue": "1. מנהל הפרויקט",
+                        "displayValue": "1. יוגב",
                         "userExpectedAnswers": ["1", "one", "אחד"]
                     },
                     {
                         "returnValue": "2",
-                        "displayValue": "2. המתכנת המנוסה ביותר",
+                        "displayValue": "2. אסתי",
                         "userExpectedAnswers": ["2", "two", "שתיים"]
                     },
                     {
                         "returnValue": "3",
-                        "displayValue": "3. אף אחד, כולם שווים",
+                        "displayValue": "3. חנהלה",
                         "userExpectedAnswers": ["3", "three", "שלוש"]
                     }
                 ],
-                "BestAnswer": "מנהל הפרויקט"
+                "BestAnswer": "אסתי"
             }
         ]
     }
