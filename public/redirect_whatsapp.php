@@ -1,25 +1,30 @@
 <?php
-// Set content-type header to ensure UTF-8 encoding
-header('Content-Type: text/html; charset=utf-8');
+// Set headers for UTF-8 support
+header('Content-Type: text/html; charset=UTF-8');
+mb_internal_encoding("UTF-8");
 
 // Get parameters from URL, with defaults
 $wappnum = isset($_GET['WAPPNUM']) ? $_GET['WAPPNUM'] : '972527229106';
-$msgtext = isset($_GET['MSGTEXT']) ? $_GET['MSGTEXT'] : '🪴  אני רוצה לשחק במשחקי שיח. 😂 ';
+$msgtext = isset($_GET['MSGTEXT']) ? $_GET['MSGTEXT'] : 'אני רוצה לשחק במשחקי שיח';
 $id = isset($_GET['ID']) ? $_GET['ID'] : '1000001';
 
-// Ensure the message is in UTF-8 encoding
+// Ensure proper UTF-8 encoding
 $msgtext = mb_convert_encoding($msgtext, 'UTF-8', 'auto');
+$msgtext = htmlspecialchars_decode($msgtext, ENT_QUOTES); // Decode any special characters
 
-// Generate the new ID format as requested
-$currentMinute = date('i');  // minute at start
-$currentHour = date('H');    // hour at end
+// Generate the new ID format
+$currentMinute = date('i');
+$currentHour = date('H');
 $new_id = $currentMinute . $id . $currentHour;
 
-// Prepare WhatsApp URL using rawurlencode for better URL encoding
-$full_message = rawurlencode($msgtext . ' ID=' . $new_id);
+// Correctly encode the message for iOS & Android compatibility
+$full_message = urlencode($msgtext . ' ID=' . $new_id);
 $whatsappURL = "https://wa.me/{$wappnum}?text={$full_message}";
 
-// Redirect immediately to WhatsApp
+// Debugging: Uncomment to test the URL before redirection
+// echo $whatsappURL; exit();
+
+// Redirect to WhatsApp
 header("Location: $whatsappURL");
 exit();
 ?>
