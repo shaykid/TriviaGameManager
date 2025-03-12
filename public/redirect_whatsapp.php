@@ -5,7 +5,7 @@ mb_internal_encoding("UTF-8");
 
 // Get parameters from URL, with defaults
 $wappnum = isset($_GET['WAPPNUM']) ? $_GET['WAPPNUM'] : '972527229106';
-$msgtext = isset($_GET['MSGTEXT']) ? $_GET['MSGTEXT'] : 'אני רוצה לשחק במשחקי שיח';
+$msgtext = isset($_GET['MSGTEXT']) ? $_GET['MSGTEXT'] : 'אני רוצה לשחק במשחקי שיח *לפורים* אנא *לחץ שלח להתחלת המשחק*';
 $id = isset($_GET['ID']) ? $_GET['ID'] : '1000001';
 
 // Ensure proper UTF-8 encoding
