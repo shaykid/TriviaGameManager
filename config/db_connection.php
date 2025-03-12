@@ -8,7 +8,7 @@ try {
         $config['password']
     );
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    echo json_encode(["status" => "ok"]);
+   
 } catch (PDOException $e) {
     echo json_encode([
         "status" => "error",
