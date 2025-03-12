@@ -96,9 +96,9 @@ $others_count = count($selected_department) + count($selected_team) + count($sel
 // ---- For General Questions ----
 $general_unanswered = getAllUnansweredQuestions($pdo, $user_id, $general_questions, "general");
 if ($others_count === 0) {
-    $general_needed = 5;
+    $general_needed = 3;
 } else {
-    $general_needed = 5 - $others_count;
+    $general_needed = 3 - $others_count;
     if ($general_needed < 2) {
         $general_needed = 2;
     }
