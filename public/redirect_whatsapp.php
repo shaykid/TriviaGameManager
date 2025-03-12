@@ -1,7 +1,7 @@
 <?php
 // Get parameters from URL, with defaults
 $wappnum = isset($_GET['WAPPNUM']) ? $_GET['WAPPNUM'] : '972527229106';
-$msgtext = isset($_GET['MSGTEXT']) ? $_GET['MSGTEXT'] : '🪴  *אני רוצה לשחק *במשחקי שיח 😂 ';
+$msgtext = isset($_GET['MSGTEXT']) ? $_GET['MSGTEXT'] : '🪴  אני רוצה לשחק במשחקי שיח 😂 ';
 $id = isset($_GET['ID']) ? $_GET['ID'] : '1000001';
 
 // Generate the new ID format as requested
