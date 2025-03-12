@@ -63,22 +63,15 @@ function selectOneRandom($questions, $fixedCategory) {
  */
 function selectRandomMultiple($questions, $num, $fixedCategory) {
     $selected = [];
+    
     if (!empty($questions)) {
-        if (count($questions) > $num) {
-            $keys = array_rand($questions, $num);
-            if (!is_array($keys)) {
-                $keys = [$keys];
-            }
-            foreach ($keys as $key) {
-                $q = $questions[$key];
-                $q['selected_category'] = $fixedCategory;
-                $selected[] = $q;
-            }
-        } else {
-            foreach ($questions as $q) {
-                $q['selected_category'] = $fixedCategory;
-                $selected[] = $q;
-            }
+        shuffle($questions); // מערבב את סדר השאלות לפני הבחירה
+        
+        $selected_questions = array_slice($questions, 0, $num); // בחירת המספר הנדרש
+        
+        foreach ($selected_questions as $q) {
+            $q['selected_category'] = $fixedCategory;
+            $selected[] = $q;
         }
     }
     return $selected;
